@@ -1,4 +1,4 @@
 .DS_Store
 whitie.pem
-applicaiton/config
+applicaiton/config/*
 phpinfo.php
