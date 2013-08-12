@@ -286,5 +286,14 @@ $db['default']['save_queries'] = FALSE;
 // database.php
 1. 有設定 test 時候用 test_whitie server
 
+// gitignore 
+1. upload
+2. sqlite
+3. config
+4. pem
+5. phpinfo.php
+6. ds_file
+7. logs
+
 
 
