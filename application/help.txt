@@ -269,7 +269,7 @@ http://www.sourcegear.com/diffmerge/downloaded.php
 
 
 
-// 可以設定多個 MY_Controller 之類的東西
+// 可以設定多個 MY_Controller 之類的東西 ( 取消了，因為會去載入 MY_object_service 不知為何)
 1. index 設定 __autoload
 http://philsturgeon.co.uk/blog/2010/02/CodeIgniter-Base-Classes-Keeping-it-DRY
 

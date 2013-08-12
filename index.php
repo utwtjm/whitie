@@ -201,21 +201,6 @@ if (defined('ENVIRONMENT'))
 require_once APPPATH.'third_party/datamapper/bootstrap.php';
 
 /*
-| -------------------------------------------------------------------
-|  Native Auto-load 小白加的，讓 test_controller 可以動
-| -------------------------------------------------------------------
-| 
-| Nothing to do with cnfig/autoload.php, this allows PHP autoload to work
-| for base controllers and some third-party libraries.
-|
-*/
-function __autoload($class) {
-	if(strpos($class, 'CI_') !== 0) {
-  		@include_once( APPPATH . 'core/'. $class . EXT );
- 	}
-}
-
-/*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
  * --------------------------------------------------------------------
