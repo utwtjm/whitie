@@ -117,7 +117,7 @@ class User_upload_service extends Base_service {
 		// 上傳
 		$default_config = config_get(null, 'upload');
 		$default_config = array_merge($default_config, $config);
-		$default_config['upload_path'] = $this->get_image_folder($user_id, null, null, true);
+		$default_config['upload_path'] = $this->get_image_folder($user_id, null, true);
 		$default_config['allowed_types'] = $default_config['allowed_image_types'];
 		$default_config['file_names'] = $file_names;
 		return $this->do_upload($default_config);
@@ -233,7 +233,7 @@ class User_upload_service extends Base_service {
 	*
 	*/
 	function create_image_folder($user_id, $date = null) {
-		$user_upload_image_folder = $this->get_image_folder($user_id, null, $date, true);
+		$user_upload_image_folder = $this->get_image_folder($user_id, $date, true);
 		return $this->create_folder($user_upload_image_folder);
 	}
 

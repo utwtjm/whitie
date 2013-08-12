@@ -8,10 +8,6 @@
 
 class Test_user_upload_service extends CodeIgniterUnitTestCase {
 
-    var $user_id;
-    var $vaild_image_file;
-    var $file_name;
-
 	public function __construct() {
 		parent::__construct();
 
@@ -134,7 +130,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
     *
     */
     function test_get_avatar_folder() {
-        $user_upload_avatar_folder = $this->user_upload_service->get_avatar_folder($this->user_id, '2013-07-11');
+        $user_upload_avatar_folder = $this->user_upload_service->get_avatar_folder(1, '2013-07-11');
         show_result($user_upload_avatar_folder);
         $this->assertTrue($user_upload_avatar_folder == 'avatars/a11/2013/07');
     }
@@ -149,7 +145,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
     *
     */
     function test_get_image_folder() {
-        $user_upload_image_folder = $this->user_upload_service->get_image_folder($this->user_id, '2013-01-01');
+        $user_upload_image_folder = $this->user_upload_service->get_image_folder(1, '2013-01-01');
         show_result($user_upload_image_folder);
         $this->assertTrue($user_upload_image_folder == 'images/a11/2013/01');
     }
@@ -164,7 +160,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
     *
     */
     function test_get_file_folder() {
-        $user_upload_file_folder = $this->user_upload_service->get_file_folder($this->user_id, '2013-01-01');
+        $user_upload_file_folder = $this->user_upload_service->get_file_folder(1, '2013-01-01');
         $this->assertTrue($user_upload_file_folder == 'files/a11/2013/01');
     }
 
@@ -176,7 +172,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
      *
      */
     public function test_get_avatar_folder_and_real_avatar_path() {
-        $user_avatar_file = $this->user_upload_service->get_avatar_folder($this->user_id, '2013-07-11', true);
+        $user_avatar_file = $this->user_upload_service->get_avatar_folder(1, '2013-07-11', true);
         show_result($user_avatar_file);
         $this->assertTrue($user_avatar_file == REAL_APPPATH . '/' . UPLOAD_FOLDER . '/' . 'avatars/a11/2013/07');
     }
@@ -208,7 +204,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         // 測試
         show_result($_FILES);
         $file_names = array('userfile1', 'userfile2');
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names);
+        $result = $this->user_upload_service->do_image_upload(1, $file_names);
         show_result($result);
         $this->assertTrue($result->has_error());
     }
@@ -228,7 +224,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array(MAIN_PATH . 'php_test/files/vaild.png');
         $file_names = array('userfile1');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names, null, array('max_size'=>1));
+        $result = $this->user_upload_service->do_image_upload(1, $file_names, null, array('max_size'=>1));
         show_result($result);
         $this->assertTrue($result->has_error());
     }
@@ -248,7 +244,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array(MAIN_PATH . 'php_test/files/vaild.png');
         $file_names = array('userfile1');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names, null, array('max_width'=>100));
+        $result = $this->user_upload_service->do_image_upload(1, $file_names, null, array('max_width'=>100));
         show_result($result);
         $this->assertTrue($result->has_error());
     }
@@ -267,7 +263,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array(MAIN_PATH . 'php_test/files/vaild.png');
         $file_names = array('userfile1');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names, null, array('max_height'=>100));
+        $result = $this->user_upload_service->do_image_upload(1, $file_names, null, array('max_height'=>100));
         show_result($result);
         $this->assertTrue($result->has_error());
     }
@@ -287,7 +283,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $file_names = array('userfile1');
         $this->set_file($files);
         show_result($_FILES);
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names);
+        $result = $this->user_upload_service->do_image_upload(1, $file_names);
         show_result($result);
         $this->assertTrue(!$result->has_error());
     }
@@ -306,7 +302,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array($vaild_png, $vaild_png);
         $file_names = array('userfile1', 'userfile2');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_image_upload($this->user_id, $file_names);
+        $result = $this->user_upload_service->do_image_upload(1, $file_names);
         show_result($result);
         $this->assertTrue(!$result->has_error());
     }
@@ -325,7 +321,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array(MAIN_PATH . 'php_test/files/hello.docx');
         $file_names = array('userfile1');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_file_upload($this->user_id, $file_names);
+        $result = $this->user_upload_service->do_file_upload(1, $file_names);
         show_result($result);
         $this->assertTrue(!$result->has_error());
     }
@@ -344,7 +340,7 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
         $files = array(MAIN_PATH . 'php_test/files/vaild.png');
         $file_names = array('userfile1');
         $this->set_file($files);
-        $result = $this->user_upload_service->do_avatar_upload($this->user_id, $file_names);
+        $result = $this->user_upload_service->do_avatar_upload(1, $file_names);
         show_result($result);
         $this->assertTrue(!$result->has_error());
     }
