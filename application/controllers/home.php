@@ -12,6 +12,7 @@ class Home extends MY_Controller {
 	*
 	*/
 	public function index() {
+		echo 'a';
 		$this->_display();
 	}
 
