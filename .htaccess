@@ -1,0 +1,26 @@
+# Various rewrite rules.
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  
+  # 1. 跟現在網址進行比對，不比 domain，rule 的 (.*) 就是所有的 $1，$1 去比較 cond 後，如果符合就轉到 rule
+  # 2. R=301或者R=302，臨時的或是永久的重定向
+  # 3. A rewrite rule does not change the values apache supplies to php (which PHP then uses to populate its $_SERVER array). A rewritten URL is expected to have $_SERVER values corresonding to the original, un-rewritten request parameters. -> rewrite 不能改變 $_SERVER 的數值 ex: request_uri ，但 ci 是看 request_uri ，所以不管我 rewrite 怎麼寫，他還是看目前的網址
+  # 4. 可以印 $_SERVER 看看現在 redirect 去哪了
+
+
+  # 如果是 public third_party 就傳到 application
+  RewriteCond $1 ^(third_party(.*)|public(.*))
+  RewriteRule ^(.*)$ application/$1 [L]
+
+  # 如果不是 public third_party 且不是 phpinfo.php 等等...
+  RewriteCond $1 !^(phpinfo\.php|index\.php|public(.*)|third_party(.*)|application|php_test\.php|js_test\.php|php_test|js_test)
+  RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+</IfModule>
+
+
+
+
+

@@ -1,0 +1,290 @@
+// datamapper
+
+1. Upload the application/config/datamapper.php file to your CodeIgniter application/config folder. and 設定 config
+2. Upload the application/libraries/datamapper.php file to your CodeIgniter application/libraries folder.
+3. Upload the application/third_party/datamapper folder to your CodeIgniter application/third_party folder.
+4. Upload the application/language folder to your CodeIgniter application/language folder.
+5. application/config/autoload.php 加上 datamapper
+6. $autoload['models'] = array(); 清空
+7. $db['default']['dbprefix'] = ""; 清空
+8. Open your CodeIgniter /index.php file with a text editor and add the DataMapper bootstrap, directly BEFORE the Codeigniter bootstrap. 
+9. 加上 /* --------------------------------------------------------------------
+ * LOAD THE DATAMAPPER BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ */
+require_once APPPATH.'third_party/datamapper/bootstrap.php';
+
+http://datamapper.wanwizard.eu/#
+
+10. datamapper 我有改過，改成 extend my_objet
+
+
+
+// filter
+
+1. you should get following files in the system/application/ directory:
+
+    config/filters.php
+    config/hooks.php
+    filters/perfmon.php
+    filters/test.php
+    hooks/filters/Filter.php
+    hooks/filters/init.php
+    hooks/filters/Pipe.php
+
+2. $config['enable_hooks'] = TRUE;
+
+3. hooks.php 加上 
+$hook['post_controller_constructor'][] = array(
+                                'class'    => '',
+                                'function' => 'pre_filter',
+                                'filename' => 'init.php',
+                                'filepath' => 'hooks/filters',
+                                'params'   => array()
+                                );
+
+$hook['post_controller'][] = array(
+                                'class'    => '',
+                                'function' => 'post_filter',
+                                'filename' => 'init.php',
+                                'filepath' => 'hooks/filters',
+                                'params'   => array()
+                                );
+
+https://github.com/EllisLab/CodeIgniter/wiki/Filters-system
+
+
+
+// cache
+https://github.com/philsturgeon/codeigniter-cache
+
+
+
+// seo
+http://www.coolajax.net/tutorials/codeigniter/codeigniter-tips-how-to-make-url-seo-friendly.html
+
+
+
+// xhtml / html
+http://www.chou-it.com/info/dictionary/web/html/xhtml.html
+
+
+
+// rewrite
+http://www.cnblogs.com/scgw/archive/2011/05/01/2033730.html
+
+
+
+// 目前 ci 版本
+find CI_VERSION
+
+
+
+// simpletest
+https://github.com/ericbarnes/codeigniter-simpletest
+
+
+
+
+// google captcha
+https://www.google.com/recaptcha/admin/create
+
+
+
+// captcha
+http://www.phpcaptcha.org/
+
+
+
+// template library
+
+1. template.php 放入 config
+
+2. Template.php 放入 library
+
+3. autoload template 
+
+https://github.com/lonnieezell/Ocular-Template-Library
+
+// bootsnipp
+http://bootsnipp.com/?page=6
+
+// bootstrap theme
+http://bootswatch.com/
+http://bootsnipp.com/?page=6
+http://www.tripwiremagazine.com/2013/02/twitter-bootstrap-templates.html
+http://usman.it/free-responsive-admin-template/
+http://www.bootstrappage.com/contact.php?status=ok
+
+
+// error 404
+1. create error controller
+
+2. ci router override
+
+http://jeromejaglale.com/doc/php/codeigniter_404
+
+
+// ci cookbook
+https://github.com/EllisLab/CodeIgniter/wiki/_pages
+
+// online user
+https://github.com/EllisLab/CodeIgniter/wiki/Library:-Online-Users
+
+// 大檔案下載時
+https://github.com/EllisLab/CodeIgniter/wiki/Download-helper-for-large-files
+
+// curl
+https://github.com/EllisLab/CodeIgniter/wiki/Curl-library
+
+// 30 plugin
+http://net.tutsplus.com/articles/web-roundups/30-awesome-codeigniter-tutorials-for-all-skill-levels/
+
+// 4 library
+http://ecommercedeveloper.com/articles/1658-four-useful-add-ons-for-codeigniter/
+
+// ciunit
+http://www.knollet.com/foostack/
+
+// session
+https://github.com/appleboy/CodeIgniter-Native-Session
+
+// firefox, chorme 都會自動回覆上一次的 session
+https://support.mozilla.org/zh-TW/questions/956511
+
+// ajax session 
+http://stackoverflow.com/questions/7980193/codeigniter-session-bugging-out-with-ajax-calls
+
+// 功能
+1. 登入
+2. 註冊
+3. 後台輸入飲料
+4. 最新的飲料
+5. 特價
+6. 附近的分店
+7. 最好喝
+8. 最多人喝
+9. 最雷
+10. 新品
+11. 每個人喝過後的心得
+12. 有 header footer 跟表單
+13. 等級，喝飲料魔人?
+14. 隨機得到喝飲料?
+15. badges
+16. 一句話送 badges
+
+
+// tune
+mysql log
+browser reponse 時間
+google 去看哪頁最多先 tune
+
+// css
+fire.app
+compass
+
+// 雲端字體服務
+
+// backbone
+https://github.com/kjbekkelund/writings/blob/master/published/understanding-backbone.md
+http://www.icoding.co/2012/04/backbonejs-html-2
+
+// device test
+http://www.browserstack.com/responsive?utm_campaign=responsive_jun&utm_medium=email&utm_source=system
+
+// bootstrap snipp
+https://bootsnipp.com/?page=6
+
+// chart.js
+http://www.bootcss.com/p/chart.js/docs/
+
+// lang 檔
+基本上是一個 controller 一個 lang
+
+// modernizr 用 javascript 判斷現在的 browser 有沒有支援 html5
+1. no-js class，主要處理遊覽器不能執行 javascript 時用的，mordernizr 會在可以執行 javascript 時，將 no-js 改為 js
+
+http://blog.roachking.net/blog/2013/02/15/noscript-css/
+http://vmiv.blogspot.tw/2012/06/modernizrhtml-5.html
+
+// seo
+http://injerry.pixnet.net/blog/post/6954937-seo%E7%B6%B2%E9%A0%81%E5%84%AA%E5%8C%96%E5%BF%85%E5%82%99%E7%9A%84meta%E6%A8%99%E7%B1%A4
+
+// apple icon
+http://www.pic2icon.com/zh-tw/site_icon_for_iphone_ipad_generator.php
+
+
+// theme 的切換方法
+就是載入不同的 css，寫在 main 裡面
+
+
+// upload library 我有自已設定一個 config 叫 upload
+
+// index.php 我有加 REAL_APPPATH
+
+// firefox cross domain
+http://www.blogjava.net/nokiaguy/archive/2008/05/15/200678.html
+
+// ci gif 透明
+http://ellislab.com/forums/viewthread/62955/
+
+
+
+// diff
+http://www.sourcegear.com/diffmerge/downloaded.php
+
+
+
+// 升級版本
+1. download
+2. copy php_test、js_test、phpinfo.php、php_test.php、whitie.pem
+3. 比對 config.php 
+4. 比對 database.php
+5. 將我們新增的 config 檔案複製回去
+6. 將我們新增的 controller 檔案複製回去
+7. 將我們新增的 core 檔案複製回去
+8. 將我們新增的 helpers 檔案複製回去
+9. 將我們新增的 filters 檔案複製回去
+10. 將我們新增的 hooks 檔案複製回去
+10. 將我們新增的 language 檔案複製回去
+10. 將我們新增的 libraries 檔案複製回去
+10. 將我們新增的 models 檔案複製回去
+10. 將我們新增的 public 檔案複製回去
+10. 將我們新增的 sqlscript 檔案複製回去
+10. 將我們新增的 third_party 檔案複製回去
+10. 將我們新增的 uploads 檔案複製回去
+10. 將我們新增的 views 檔案複製回去
+11. sftp-config.json copy 
+12. diff index.php
+13. 執行所有的測試
+14. 測試 error 頁面
+15. diff my_session
+16. diff my_upload ， upload 要直接複製新的後貼上再改
+16. diff image_lib
+17. routes.php copy
+18. autoload copy
+19. constants copy
+20. sudo chmod -Rf 777 ./whitie ( 沒用 )
+21. applicatin/.htaccess Allow from all
+
+
+
+// 可以設定多個 MY_Controller 之類的東西
+1. index 設定 __autoload
+http://philsturgeon.co.uk/blog/2010/02/CodeIgniter-Base-Classes-Keeping-it-DRY
+
+// 如果要使用 last_query 可以將這個設為 true
+$db['default']['save_queries'] = FALSE;
+
+// error 頁面設定
+1. routes.php -> $route['404_override'] = 'error/error_404';
+
+
+// 功能
+1. 註冊
+
+// database.php
+1. 有設定 test 時候用 test_whitie server
+
+
+
