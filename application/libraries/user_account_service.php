@@ -114,10 +114,10 @@ class User_account_service extends Base_service {
 		if(!$user) {
 			throw new Exception(lang_get('user_not_exist'));
 		}
-
+		
 		// 刪除掉舊的 session
 		$this->session->unset_userdata(self::SESSION_USER_KEY);
-
+		
 		// 新增新的 session
 		$group_types = $this->get_group_types($user->get_var('id'));
 		$permission_names = $this->user_permission_service->get_permission_names($user->get_var('id'));
@@ -229,9 +229,8 @@ class User_account_service extends Base_service {
 	 *
 	 */
 	public function update($new_user) {
-		$new_user_id = $new_user->get_var('id');
-
 		// 如果 new_user_id 是空的或是不存在在 db 就新增
+		$new_user_id = $new_user->get_var('id');
 		$create_user = empty($new_user_id);
 		if($create_user) {
 			$user_name = $new_user->get_var('name');

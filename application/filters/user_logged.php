@@ -10,7 +10,7 @@
 *
 */
 
-class User_auth_filter extends Base_filter {
+class User_logged_filter extends Base_filter {
 
 	function __construct($config = array()) {
 		parent::__construct($config);

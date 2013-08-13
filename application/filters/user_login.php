@@ -2,7 +2,7 @@
 
 /**
 *
-* 登入後無法看到的畫面
+* 需要登入的頁面
 *
 * @access	public
 * @param	param (type) : param description
@@ -16,17 +16,18 @@ class User_login_filter extends Base_filter {
 		parent::__construct($config);
 
 		// library
-		$this->load->library('user_account_service');
+		$this->load->library(array('user_account_service'));
 	}
 
 	function before() {
-		// 如果沒登入就導到登入頁
+		// 檢查登入與權限
 		$is_logged = $this->user_account_service->is_logged();
-		if($is_logged) {
-			redirect_home();
+		if(!$is_logged) {
+			redirect_login();
 		}
 	}
 
 	function after() {}
+
 }
 ?>
