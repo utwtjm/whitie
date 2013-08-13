@@ -2,7 +2,7 @@
 
 /**
 *
-* 需要登入的頁面
+* 登入後無法看到的頁面
 *
 * @access	public
 * @param	param (type) : param description
@@ -22,8 +22,8 @@ class User_logged_filter extends Base_filter {
 	function before() {
 		// 檢查登入與權限
 		$is_logged = $this->user_account_service->is_logged();
-		if(!$is_logged) {
-			redirect_login();
+		if($is_logged) {
+			redirect_home();
 		}
 	}
 
