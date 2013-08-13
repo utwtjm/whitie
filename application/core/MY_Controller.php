@@ -37,23 +37,6 @@ class MY_Controller extends CI_Controller {
 
 	/**
 	*
-	* 後台顯示的 view
-	*
-	* @access	public
-	* @param	param (type) : param description
-	* @return 	return : return description
-	*
-	*/
-	function _admin_display($layout = '') {
-		// 取得預設要讀取的頁面
-		if($layout === '') {
-			$layout = $this->config->item('OCU_admin_layout');
-		}
-		$this->_display($layout);
-	}
-
-	/**
-	*
 	* 測試顯示的 view
 	*
 	* @access	public
@@ -218,6 +201,32 @@ class MY_Controller extends CI_Controller {
 	*/
 	function _set_login_body() {
 		$this->_set_body_class('login');
+	}
+
+}
+
+
+class Admin_Controller extends MY_Controller {
+
+	function __construct() {
+		parent::__construct();
+	}
+
+	/**
+	*
+	* 後台顯示的 view
+	*
+	* @access	public
+	* @param	param (type) : param description
+	* @return 	return : return description
+	*
+	*/
+	function _display($layout = '') {
+		// 取得預設要讀取的頁面
+		if($layout === '') {
+			$layout = $this->config->item('OCU_admin_layout');
+		}
+		parent::_display($layout);
 	}
 
 }

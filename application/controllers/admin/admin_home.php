@@ -6,7 +6,7 @@
 //
 // ------------------------------------------------------------------
 
-class Admin_home extends MY_Controller {
+class Admin_home extends Admin_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -22,7 +22,7 @@ class Admin_home extends MY_Controller {
 	*
 	*/
 	function index() {
-		$this->_admin_display();
+		$this->_display();
 	}
 
 }

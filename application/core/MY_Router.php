@@ -8,8 +8,8 @@
 
 class MY_Router extends CI_Router {
  
-	var $error_controller = 'error';
-	var $error_method_404 = 'error_404';
+	// var $error_controller = 'error';
+	// var $error_method_404 = 'error_404';
  
     function __construct() {
         parent::__construct();

@@ -201,6 +201,9 @@ class User_permission_service extends Base_service {
 		// 如果沒傳 user_id 就直接回傳現在登入的人的 group types
 		if(is_null($user_id)) {
 			$user_data = $this->user_account_service->get_login_user_data();
+			if(empty($user_data)) {
+				return array();
+			}
 			$permission_names = $user_data->get_var('permission_names');
 			return empty($permission_names) ? array() : $permission_names ;
 		}
