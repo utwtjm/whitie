@@ -44,6 +44,8 @@ class User extends MY_Controller {
 	*
 	*/
 	function login() {
+		$redirect_to = $this->_get_post('redirect_to');
+		$this->_set_view_data('redirect_to', esc_attr($redirect_to));
 		// 麵包屑
 		$this->_add_breadcrumb(lang_get('user_login_page_title'), web_url('/user/login'));
 		$this->_display('login');
@@ -59,6 +61,7 @@ class User extends MY_Controller {
 	*
 	*/
 	function auth() {
+		$redirect_to = $this->_get_post('redirect_to');
 		// 檢查帳號密碼是否輸入正確
 		$user_name = $this->_get_post('user_name');
 		$user_pass = $this->_get_post('user_pass');
@@ -78,7 +81,11 @@ class User extends MY_Controller {
 		}	
 
 		$this->_set_message(lang_get('user_login_success'));
-		redirect_user_home();
+		if(empty($redirect_to)) {
+			redirect_user_home();
+		} else {
+			redirect_url($redirect_to);
+		}
 	}
 
 	/**

@@ -104,6 +104,70 @@ class Test_string_helper extends CodeIgniterUnitTestCase {
     	$this->assertFalse($is_email);
     }
 
+     /**
+     *
+     * 對空的字串編碼
+     *
+     * @param type param
+     *
+     */
+    public function test_esc_attr_and_empty_string() {
+        $text = esc_attr(" ", ENT_QUOTES);
+        show_result($text);
+        $this->assertTrue($text == ' ');
+    }
+
+    /**
+     *
+     * 將放入 html attr 的 value 編碼
+     *
+     * @param type param
+     *
+     */
+    public function test_esc_attr_and_ent_quotes() {
+        $text = esc_attr("<a href='test'>Test</a>", ENT_QUOTES);
+        show_result($text);
+        $this->assertTrue($text == '&lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;');
+    }
+
+    /**
+     *
+     * 將空的 url 編碼
+     *
+     * @param type param
+     *
+     */
+    public function test_esc_url_and_empty_string() {
+        $url = esc_url(' ');
+        $this->assertTrue($url == '');
+    }
+
+    /**
+     *
+     * 將 http 開頭的 url 編碼
+     *
+     * @param type param
+     *
+     */
+    public function test_esc_url_and_http_url() {
+        $url = esc_url('http://www.kimo.com.tw');
+        show_result($url);
+        $this->assertTrue($url == 'http%3A%2F%2Fwww.kimo.com.tw');
+    }
+
+     /**
+     *
+     * 將內含空白的 url 編碼
+     *
+     * @param type param
+     *
+     */
+    public function test_esc_url_and_has_empty_url() {
+        $url = esc_url('http://www.kimo.com.tw?a= 1');
+        show_result($url);
+        $this->assertTrue($url == 'http%3A%2F%2Fwww.kimo.com.tw%3Fa%3D+1');
+    }
+
 }
 
 ?>

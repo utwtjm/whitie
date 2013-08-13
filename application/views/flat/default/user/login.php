@@ -42,6 +42,7 @@
                 <div class="control-group">
                     <div class="controls clearfix">
                         <div class="pull-right">
+                            <input type="hidden" name="redirect_to" value="<?php echo $redirect_to; ?>">
                             <button type="submit" class="btn btn-success remove-margin">登入</button>
                         </div>
                         <div class="pull-left login-extra-check">

@@ -23,7 +23,7 @@ class User_login_filter extends Base_filter {
 		// 檢查登入與權限
 		$is_logged = $this->user_account_service->is_logged();
 		if(!$is_logged) {
-			redirect_login();
+			redirect_login(current_uri());
 		}
 	}
 

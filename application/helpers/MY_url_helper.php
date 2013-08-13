@@ -64,8 +64,23 @@ function redirect_user_home() {
 * @return 	return : return description
 *
 */
-function redirect_login() {
-	redirect_url('/user/login');
+function redirect_login($redirect_to = null) {
+	$url = '/user/login';
+	if(!is_null($redirect_to)) {
+		$url .= '?redirect_to=' . esc_url($redirect_to);
+	}
+	redirect_url($url);
+}
+
+/**
+ *
+ * 取得現在的 uri
+ *
+ * @param type param
+ *
+ */
+function current_uri() {
+	return get_env('REQUEST_URI');
 }
 
 /**

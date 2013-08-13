@@ -295,5 +295,7 @@ $db['default']['save_queries'] = FALSE;
 6. ds_file
 7. logs
 
+// HTTP_REFERER 居然有沒有值的時候
+
 
 

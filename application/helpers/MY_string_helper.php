@@ -8,6 +8,28 @@
 
 /**
  *
+ * 將 url 編碼
+ *
+ * @param type param
+ *
+ */
+function esc_url($url) {
+	return urlencode(trim($url));
+}
+
+/**
+ *
+ * 將放入 html attr 的 value 編碼
+ *
+ * @param type param
+ *
+ */
+function esc_attr($text, $flag = ENT_QUOTES) {
+	return htmlspecialchars($text, $flag);
+}
+
+/**
+ *
  * 傳入檔案路徑，新增額外的名字到完整的 file 路徑裡
  *
  * @param string file 完整的 file 路徑
