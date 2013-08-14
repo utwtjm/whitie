@@ -109,7 +109,7 @@ class User extends MY_Controller {
 	 *
 	 */
 	public function edit() {
-		$user_id = $this->user_account_service->get_login_id();
+		$user_id = get_login_id();
 		$user = $this->user_model->get_by_id($user_id);
 		$this->_set_view_data('user', $user);
 
@@ -124,7 +124,7 @@ class User extends MY_Controller {
 	 *
 	 */
 	public function update() {
-		$user_id = $this->user_account_service->get_login_id();
+		$user_id = get_login_id();
 		$user = $this->user_model->get_by_id($user_id);
 		
 		// 如果有上傳大頭照

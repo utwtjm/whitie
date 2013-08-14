@@ -85,7 +85,7 @@ class User_account_service extends Base_service {
 	function get_group_types($user_id = null) {
 		// 取得 user
 		if(is_null($user_id)) {
-			$user_id = $this->user_account_service->get_login_id();
+			$user_id = get_login_id();
 		} 
 		$user = $this->user_model->get_by_id($user_id);
 		if(!$user) {
@@ -170,32 +170,6 @@ class User_account_service extends Base_service {
 		$user_pass = $result['user_pass'];
 		$user = $this->user_model->get_by_id_and_pass($user_id, $user_pass);
 		return $this->login($user);
-	}
-
-	/**
-	*
-	* 已經登入
-	*
-	* @access	public
-	* @param	param (type) : param description
-	* @return 	return : return description
-	*
-	*/
-	function is_logged() {
-		return is_logged();
-	}
-
-	/**
-	*
-	* 取得現在登入的人，他的 user_id
-	*
-	* @access	public
-	* @param	param (type) : param description
-	* @return 	return : return description
-	*
-	*/
-	function get_login_id() {
-		return get_login_id();
 	}
 
 	/**
@@ -310,6 +284,46 @@ class User_account_service extends Base_service {
 		@delete_cookie(self::REMEMBER_ME_COOKIE_NAME, $domain, $path, $prefix);
 	}
 
+}
+
+/**
+*
+* 使用者是否有登入
+*
+* @access	public
+* @param	param (type) : param description
+* @return 	return : return description
+*
+*/
+function is_logged() {
+	$ci =& get_instance();
+	$ci->load->library('user_account_service');
+	$user_data = $ci->user_account_service->get_login_user_data();
+	if(empty($user_data)) {
+		return false;
+	}
+	$user_id = $user_data->get_var('user_id');
+	return !empty($user_id);
+}
+
+/**
+*
+* 取得現在登入的人，他的 user_id
+*
+* @access	public
+* @param	param (type) : param description
+* @return 	return : return description
+*
+*/
+function get_login_id() {
+	$ci =& get_instance();
+	$ci->load->library('user_account_service');
+	$user_data = $ci->user_account_service->get_login_user_data();
+	if(empty($user_data)) {
+		return 0;
+	}
+	$user_id = $user_data->get_var('user_id');
+	return $user_id ? $user_id : 0;
 }
 
 

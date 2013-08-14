@@ -119,7 +119,7 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
     function test_get_login_id_and_has_login() {
         $user = $this->user_model->get_by_id(1);
         $this->user_account_service->login($user);
-        $login_user_id = $this->user_account_service->get_login_id();
+        $login_user_id = get_login_id();
         $this->assertTrue($login_user_id == 1);
     }
 
@@ -134,7 +134,7 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
     */
     function test_get_login_id_and_not_login() {
         $this->user_account_service->logout();
-        $login_user_id = $this->user_account_service->get_login_id();
+        $login_user_id = get_login_id();
         $this->assertTrue($login_user_id === 0);
     }
 
