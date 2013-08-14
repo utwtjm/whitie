@@ -150,7 +150,7 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
     function test_is_logged_and_has_login() {
         $user = $this->user_model->get_by_id(1);
         $this->user_account_service->login($user);
-        $is_logged = $this->user_account_service->is_logged();
+        $is_logged = is_logged();
         $this->assertTrue($is_logged);
     }
 
@@ -166,7 +166,7 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
     */
     function test_is_logged_and_not_login() {
         $this->user_account_service->logout();
-        $is_logged = $this->user_account_service->is_logged();
+        $is_logged = is_logged();
         $this->assertTrue($is_logged === false);
     }
 

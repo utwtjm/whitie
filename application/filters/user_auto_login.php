@@ -21,7 +21,7 @@ class User_auto_login_filter extends Base_filter {
 
 	function before() {
 		// 如果沒登入就導到登入頁
-		$is_logged = $this->user_account_service->is_logged();
+		$is_logged = is_logged();
 		$encode_remember_me_cookie_name = get_cookie(user_account_service::REMEMBER_ME_COOKIE_NAME);
 		if(!$is_logged) {
 			try {

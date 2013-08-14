@@ -182,12 +182,7 @@ class User_account_service extends Base_service {
 	*
 	*/
 	function is_logged() {
-		$user_data = $this->get_login_user_data();
-		if(empty($user_data)) {
-			return false;
-		}
-		$user_id = $user_data->get_var('user_id');
-		return !empty($user_id);
+		return is_logged();
 	}
 
 	/**
@@ -200,12 +195,7 @@ class User_account_service extends Base_service {
 	*
 	*/
 	function get_login_id() {
-		$user_data = $this->get_login_user_data();
-		if(empty($user_data)) {
-			return 0;
-		}
-		$user_id = $user_data->get_var('user_id');
-		return $user_id ? $user_id : 0;
+		return get_login_id();
 	}
 
 	/**
@@ -321,23 +311,6 @@ class User_account_service extends Base_service {
 	}
 
 }
-
-
-/**
-*
-* 使用者是否有登入
-*
-* @access	public
-* @param	param (type) : param description
-* @return 	return : return description
-*
-*/
-function is_logged() {
-	$ci =& get_instance();
-	$ci->load->library('user_account_service');
-	return $ci->user_account_service->is_logged();
-}
-
 
 
 ?>
