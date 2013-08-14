@@ -16,7 +16,7 @@ class User_login_filter extends Base_filter {
 		parent::__construct($config);
 
 		// library
-		$this->load->library(array('user_account_service'));
+		$this->load->library(array('user_account_service', 'template'));
 	}
 
 	function before() {

@@ -297,5 +297,8 @@ $db['default']['save_queries'] = FALSE;
 
 // HTTP_REFERER 居然有沒有值的時候
 
+// ci plugin
+http://www.rlmseo.com/blog/codeigniter-library-80-free-addons-tutorials-and-videos/
+
 
 

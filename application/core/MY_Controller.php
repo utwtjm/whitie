@@ -102,7 +102,7 @@ class MY_Controller extends CI_Controller {
 	* @return 	return : return description
 	*
 	*/
-	function _set_message($message, $type = 'info') {
+	function _set_message($message, $type) {
 		$this->template->set_message($message, $type);
 	}
 

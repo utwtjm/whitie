@@ -67,7 +67,7 @@ class User extends MY_Controller {
 		$user_pass = $this->_get_post('user_pass');
 		$result = $this->user_account_service->auth($user_name, $user_pass);
 		if(is_my_error($result)) {
-			$this->_set_message($result->get_error_message());
+			$this->_set_error_message($result->get_error_message());
 			redirect_login();
 		}
 
@@ -80,7 +80,7 @@ class User extends MY_Controller {
 			$this->user_account_service->set_remember_me($user_id, $user_pass);
 		}	
 
-		$this->_set_message(lang_get('user_login_success'));
+		$this->_set_error_message(lang_get('user_login_success'));
 		if(empty($redirect_to)) {
 			redirect_user_home();
 		} else {
@@ -124,14 +124,14 @@ class User extends MY_Controller {
 	 *
 	 */
 	public function update() {
-		$user_id = 1;
+		$user_id = $this->user_account_service->get_login_id();
 		$user = $this->user_model->get_by_id($user_id);
 		
 		// 如果有上傳大頭照
 		$result = $this->user_upload_service->do_avatar_upload($user_id, array('avatar_file'));
 		if($this->user_upload_service->has_select_file(array('avatar_file'))
 			&& $result->has_error()) {
-			$this->_set_message($result->get_error_message());
+			$this->_set_error_message($result->get_error_message());
 			redirect_url('/user/edit');
 		}
 

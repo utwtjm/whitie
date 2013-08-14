@@ -60,7 +60,7 @@ class Register extends MY_Controller {
 		// 檢查註冊資料
 		$validate = $this->user_register_service->validate();
 		if(is_my_error($validate)) {
-			$this->_set_message($validate->get_error_message());
+			$this->_set_error_message($validate->get_error_message());
 			redirect_url('/register/new_user');
 		}
 
