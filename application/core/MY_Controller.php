@@ -102,7 +102,7 @@ class MY_Controller extends CI_Controller {
 	* @return 	return : return description
 	*
 	*/
-	function _set_message($message, $type) {
+	private function _set_message($message, $type) {
 		$this->template->set_message($message, $type);
 	}
 
@@ -116,7 +116,7 @@ class MY_Controller extends CI_Controller {
 	*
 	*/
 	function _set_error_message($message) {
-		$this->template->set_message($message, 'error');
+		$this->_set_message($message, 'error');
 	}
 
 	/**
@@ -129,7 +129,7 @@ class MY_Controller extends CI_Controller {
 	*
 	*/
 	function _set_info_message($message) {
-		$this->template->set_message($message, 'error');
+		$this->_set_message($message, 'error');
 	}
 
 	/**
@@ -142,7 +142,7 @@ class MY_Controller extends CI_Controller {
 	*
 	*/
 	function _set_success_message($message) {
-		$this->template->set_message($message, 'success');
+		$this->_set_message($message, 'success');
 	}
 
 	/**
