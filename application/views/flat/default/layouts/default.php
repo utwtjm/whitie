@@ -58,7 +58,7 @@
     <!-- END Stylesheets -->
 
     <!-- Modernizr (Browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it) -->
-    <? add_script('vendor/modernizr-2.6.2-respond-1.1.0.min'); ?>
+    <? add_script('modernizr-2.6.2-respond-1.1.0.min'); ?>
 </head>
 
 <!-- Body -->
@@ -210,7 +210,7 @@
     <!-- Get Jquery library from Google ... -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- ... but if something goes wrong get Jquery from local file -->
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('/vendor/jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
 
     <!--
     Include Google Maps API for global use.
@@ -220,7 +220,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <!-- Bootstrap.js -->
-    <? add_script('vendor/bootstrap.min'); ?>
+    <? add_script('bootstrap.min'); ?>
 
     <!-- Jquery plugins and custom javascript code -->
     <? add_script('plugins'); ?>

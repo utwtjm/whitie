@@ -15,8 +15,4 @@ class Home extends MY_Controller {
 		$this->_display();
 	}
 
-	public function test() {
-		$this->_display('empty');
-	}
-
 }

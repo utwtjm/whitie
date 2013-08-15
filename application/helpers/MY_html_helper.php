@@ -185,3 +185,14 @@ function render_attributes($coll) {
     return $str;
 }
 
+/**
+ *
+ * 新增 tinymce
+ *
+ * @param type param
+ *
+ */
+function add_tinymce($return = false) {
+    return add_script('tinymce/js/tinymce/tinymce.min.js', $return);
+}
+

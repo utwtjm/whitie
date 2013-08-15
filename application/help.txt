@@ -300,5 +300,10 @@ $db['default']['save_queries'] = FALSE;
 // ci plugin
 http://www.rlmseo.com/blog/codeigniter-library-80-free-addons-tutorials-and-videos/
 
+// tinymce codeigniter
+http://stackoverflow.com/questions/15740093/tinymce-codeigniter
+https://gist.github.com/cheeaun/614464
+http://stackoverflow.com/questions/5029077/how-i-can-add-multi-tinymce-editors-with-different-config-for-each-one
+
 
 
