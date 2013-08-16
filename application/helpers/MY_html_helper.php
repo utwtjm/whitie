@@ -193,6 +193,6 @@ function render_attributes($coll) {
  *
  */
 function add_tinymce($return = false) {
-    return add_script('tinymce/js/tinymce/tinymce.min.js', $return);
+    return add_script('tinymce/js/tinymce/tinymce.min', $return);
 }
 

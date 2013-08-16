@@ -171,7 +171,7 @@
 
     <!-- Get Jquery library from Google ... -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('/flat/jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
 
     <!-- js -->
     <? add_script('flat/bootstrap.min'); ?>
