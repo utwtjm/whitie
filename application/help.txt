@@ -305,5 +305,7 @@ http://stackoverflow.com/questions/15740093/tinymce-codeigniter
 https://gist.github.com/cheeaun/614464
 http://stackoverflow.com/questions/5029077/how-i-can-add-multi-tinymce-editors-with-different-config-for-each-one
 
+// 在改 css file imgs js 架構時可以用 firebug 檢查有哪些檔案路徑沒改到
+
 
 

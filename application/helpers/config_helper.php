@@ -78,19 +78,17 @@ function upload_config_get($item = '') {
 
 /**
 *
-* 取得 public template folder
+* 取得 public folder
 *
 * @access   public
 * @param    param (type) : param description
 * @return   return : return description
 *
 */
-function get_theme_folder($type) {
-    $default_template = config_get('OCU_default_theme');
-    $default_template = strtoupper($default_template);
+function get_public_folder($type) {
     $type = strtoupper($type);
-    $constant_name = sprintf('PUBLIC_THEME_%s_%s_FOLDER', $default_template, $type);
-    $theme_folder = constant ($constant_name);
+    $constant_name = sprintf('PUBLIC_%s_FOLDER', $type);
+    $theme_folder = constant($constant_name);
     return $theme_folder;
 }
 
@@ -105,7 +103,7 @@ function get_theme_folder($type) {
 *
 */
 function get_js_folder() {
-    return get_theme_folder('js');
+    return get_public_folder('js');
 }
 
 /**
@@ -118,7 +116,7 @@ function get_js_folder() {
 *
 */
 function get_css_folder() {
-    return get_theme_folder('css');
+    return get_public_folder('css');
 }
 
 
@@ -132,7 +130,7 @@ function get_css_folder() {
 *
 */
 function get_image_folder() {
-    return get_theme_folder('image');
+    return get_public_folder('imgs');
 }
 
 

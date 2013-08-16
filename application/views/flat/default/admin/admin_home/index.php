@@ -88,7 +88,7 @@
                         <li class="clearfix">
                             <i class="timeline-meta-cat icon-comments themed-background-leaf"></i>
                             <span class="timeline-meta-time">1 min ago</span>
-                            <img src="<?php echo public_image_url('/template/avatar.jpg')?>" alt="Avatar" class="timeline-avatar">
+                            <img src="<?php echo public_image_url('/flat/template/avatar.jpg')?>" alt="Avatar" class="timeline-avatar">
                             <span class="timeline-title"><a href="page_ready_user_profile.html">John Doe</a> just commented on an <a href="page_ready_article.html">Article</a></span>
                             <span class="timeline-text">Hi, I think that it's a great article! Keep it up!</span>
                         </li>
@@ -518,7 +518,7 @@ $(function() {
         $('<li class="clearfix">' +
             '<i class="timeline-meta-cat glyphicon-picture themed-background-wood"></i>' +
             '<span class="timeline-meta-time">just now</span>' +
-            '<img src="<?php echo public_image_url('/template/avatar.jpg')?>" alt="Avatar" class="timeline-avatar">' +
+            '<img src="<?php echo public_image_url('/flat/template/avatar.jpg')?>" alt="Avatar" class="timeline-avatar">' +
             '<span class="timeline-title"><a href="page_ready_user_profile.html">John Doe</a> just added 2 new photos</span>' +
             '<a href="<?php echo public_image_url('/placeholders/image_720x450_light.png')?>" data-toggle="lightbox-image"><img src="<?php echo public_image_url('/placeholders/image_160x120_light.png')?>" alt="image"></a> ' +
             '<a href="<?php echo public_image_url('/placeholders/image_720x450_light.png')?>" data-toggle="lightbox-image"><img src="<?php echo public_image_url('/placeholders/image_160x120_light.png')?>" alt="image"></a>' +

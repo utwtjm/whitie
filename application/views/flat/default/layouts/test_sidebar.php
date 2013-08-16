@@ -11,7 +11,7 @@
             </a>
         </div>
         <a href="page_ready_user_profile.html">
-            <img src="<?php echo public_image_url('/template/avatar.jpg')?>" alt="Avatar" class="img-circle">
+            <img src="<?php echo public_image_url('/flat/template/avatar.jpg')?>" alt="Avatar" class="img-circle">
         </a>
     </div>
     <!-- END Mini Profile -->

@@ -33,14 +33,14 @@
     <? add_icon(array('rel' => 'shortcut icon', 'type' => 'image/ico', 'href' => 'favicon.ico') );  ?>
    
     <!-- css -->
-    <? add_css('bootstrap'); ?>
-    <? add_css('plugins'); ?>
-    <? add_css('main'); ?>
-    <? add_css('themes/city.css'); ?>
-    <? add_css('themes'); ?>
+    <? add_css('flat/bootstrap'); ?>
+    <? add_css('flat/plugins'); ?>
+    <? add_css('flat/main'); ?>
+    <? add_css('flat/themes/city.css'); ?>
+    <? add_css('flat/themes'); ?>
     
     <!-- js -->
-    <? add_script('modernizr-2.6.2-respond-1.1.0.min'); ?>
+    <? add_script('flat/modernizr-2.6.2-respond-1.1.0.min'); ?>
 </head>
 
 <body class="header-fixed-top">
@@ -174,9 +174,9 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
 
     <!-- js -->
-    <? add_script('bootstrap.min'); ?>
-    <? add_script('plugins'); ?>
-    <? add_script('main'); ?>
+    <? add_script('flat/bootstrap.min'); ?>
+    <? add_script('flat/plugins'); ?>
+    <? add_script('flat/main'); ?>
 
 </body>
 </html>

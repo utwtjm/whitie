@@ -2605,7 +2605,7 @@ html .halflings {
     height: 48px;
     line-height: 48px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons.pro/glyphicons.svg);
+    background-image: url(/public/imgs/flat/glyphicons.pro/glyphicons.svg);
     background-position: 0 0;
     background-repeat: no-repeat;
     vertical-align: top;
@@ -2615,13 +2615,13 @@ html .halflings {
 }
 .no-inlinesvg [class^="glyphimg-"],
 .no-inlinesvg [class*=" glyphimg-"] {
-    background-image: url(../img/glyphicons.pro/glyphicons.png);
+    background-image: url(/public/imgs/flat/glyphicons.pro/glyphicons.png);
 }
 .glyphimg-white {
-    background-image: url(../img/glyphicons.pro/glyphicons-white.svg) !important;
+    background-image: url(/public/imgs/flat/glyphicons.pro/glyphicons-white.svg) !important;
 }
 .no-inlinesvg .glyphimg-white {
-    background-image: url(../img/glyphicons.pro/glyphicons-white.png) !important;
+    background-image: url(/public/imgs/flat/glyphicons.pro/glyphicons-white.png) !important;
 }
 .glyphimg-glass {
     background-position: 4px 11px;
@@ -4410,7 +4410,7 @@ html .halflings {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons.halflings.pro/glyphicons_halflings.svg);
+    background-image: url(/public/imgs/flat/glyphicons.halflings.pro/glyphicons_halflings.svg);
     background-position: 0 0;
     background-repeat: no-repeat;
     vertical-align: top;
@@ -4420,13 +4420,13 @@ html .halflings {
 }
 .no-inlinesvg [class^="halflingimg-"],
 .no-inlinesvg [class*=" halflingimg-"] {
-    background-image: url(../img/glyphicons.halflings.pro/glyphicons_halflings.png);
+    background-image: url(/public/imgs/flat/glyphicons.halflings.pro/glyphicons_halflings.png);
 }
 .halflingimg-white {
-    background-image: url(../img/glyphicons.halflings.pro/glyphicons_halflings-white.svg) !important;
+    background-image: url(/public/imgs/flat/glyphicons.halflings.pro/glyphicons_halflings-white.svg) !important;
 }
 .no-inlinesvg .halflingimg-white {
-    background-image: url(../img/glyphicons.halflings.pro/glyphicons_halflings-white.png) !important;
+    background-image: url(/public/imgs/flat/glyphicons.halflings.pro/glyphicons_halflings-white.png) !important;
 }
 .halflingimg-glass {
     background-position: 0 0;
@@ -4925,12 +4925,12 @@ html .halflings {
     *margin-right: .3em;
     line-height: 16px;
     vertical-align: text-top;
-    background-image: url("../img/gemicon/gemicon_dark_16x16.png");
+    background-image: url("/public/imgs/flat/gemicon/gemicon_dark_16x16.png");
     background-repeat: no-repeat;
 }
 
 .gemicon-small-white {
-    background-image: url("../img/gemicon/gemicon_white_16x16.png") !important;
+    background-image: url("/public/imgs/flat/gemicon/gemicon_white_16x16.png") !important;
 }
 
 .gemicon-small-meter { background-position: 0 0; }
@@ -5154,12 +5154,12 @@ html .halflings {
     *margin-right: .3em;
     line-height: 32px;
     vertical-align: text-top;
-    background-image: url("../img/gemicon/gemicon_dark_32x32.png");
+    background-image: url("/public/imgs/flat/gemicon/gemicon_dark_32x32.png");
     background-repeat: no-repeat;
 }
 
 .gemicon-medium-white {
-    background-image: url("../img/gemicon/gemicon_white_32x32.png") !important;
+    background-image: url("/public/imgs/flat/gemicon/gemicon_white_32x32.png") !important;
 }
 
 .gemicon-medium-meter { background-position: 0 0; }
@@ -5383,12 +5383,12 @@ html .halflings {
     *margin-right: .3em;
     line-height: 64px;
     vertical-align: text-top;
-    background-image: url("../img/gemicon/gemicon_dark_64x64.png");
+    background-image: url("/public/imgs/flat/gemicon/gemicon_dark_64x64.png");
     background-repeat: no-repeat;
 }
 
 .gemicon-big-white {
-    background-image: url("../img/gemicon/gemicon_white_64x64.png") !important;
+    background-image: url("/public/imgs/flat/gemicon/gemicon_white_64x64.png") !important;
 }
 
 .gemicon-big-meter { background-position: 0 0; }
@@ -6713,7 +6713,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 .colorpicker-saturation {
     width: 100px;
     height: 100px;
-    background-image: url(../img/jquery.colorpicker/saturation.png);
+    background-image: url(/public/imgs/flat/jquery.colorpicker/saturation.png);
     cursor: crosshair;
     float: left;
 }
@@ -6764,11 +6764,11 @@ http://www.apache.org/licenses/LICENSE-2.0
 }
 
 .colorpicker-hue {
-    background-image: url(../img/jquery.colorpicker/hue.png);
+    background-image: url(/public/imgs/flat/jquery.colorpicker/hue.png);
 }
 
 .colorpicker-alpha {
-    background-image: url(../img/jquery.colorpicker/alpha.png);
+    background-image: url(/public/imgs/flat/jquery.colorpicker/alpha.png);
     display: none;
 }
 
@@ -6832,7 +6832,7 @@ http://www.apache.org/licenses/LICENSE-2.0
     height: 10px;
     margin-top: 5px;
     clear: both;
-    background-image: url(../img/jquery.colorpicker/alpha.png);
+    background-image: url(/public/imgs/flat/jquery.colorpicker/alpha.png);
     background-position: 0 100%;
 }
 
@@ -7081,7 +7081,7 @@ MIT License
     width: 12px;
     height: 12px;
     font-size: 1px;
-    background: url('../img/jquery.chosen/chosen-sprite.png') -42px 1px no-repeat;
+    background: url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') -42px 1px no-repeat;
 }
 
 .chzn-container-single .chzn-single abbr:hover {
@@ -7102,7 +7102,7 @@ MIT License
 }
 
 .chzn-container-single .chzn-single div b {
-    background: url('../img/jquery.chosen/chosen-sprite.png') no-repeat 0px 2px;
+    background: url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') no-repeat 0px 2px;
     display: block;
     width: 100%;
     height: 100%;
@@ -7117,7 +7117,7 @@ MIT License
 }
 
 .chzn-container-single .chzn-search input {
-    background: #fff url('../img/jquery.chosen/chosen-sprite.png') no-repeat 100% -20px;
+    background: #fff url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') no-repeat 100% -20px;
     margin: 1px 0;
     padding: 4px 20px 4px 5px;
     outline: 0;
@@ -7199,7 +7199,7 @@ MIT License
     width: 12px;
     height: 12px;
     font-size: 1px;
-    background: url('../img/jquery.chosen/chosen-sprite.png') -42px 1px no-repeat;
+    background: url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') -42px 1px no-repeat;
 }
 
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
@@ -7292,11 +7292,11 @@ MIT License
 }
 
 .chzn-container .chzn-results-scroll-down span {
-    background: url('../img/jquery.chosen/chosen-sprite.png') no-repeat -4px -3px;
+    background: url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') no-repeat -4px -3px;
 }
 
 .chzn-container .chzn-results-scroll-up span {
-    background: url('../img/jquery.chosen/chosen-sprite.png') no-repeat -22px -3px;
+    background: url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') no-repeat -22px -3px;
 }
 
 .chzn-container-active .chzn-single {
@@ -7352,7 +7352,7 @@ MIT License
 .chzn-rtl .chzn-results .group-option { padding-left: 0; padding-right: 15px; }
 .chzn-rtl.chzn-container-active .chzn-single-with-drop div { border-right: none; }
 .chzn-rtl .chzn-search input {
-    background: #fff url('../img/jquery.chosen/chosen-sprite.png') no-repeat -30px -20px;
+    background: #fff url('/public/imgs/flat/jquery.chosen/chosen-sprite.png') no-repeat -30px -20px;
     padding: 4px 5px 4px 20px;
     direction: rtl;
 }
@@ -7370,7 +7370,7 @@ only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
     .chzn-rtl .chzn-search input, .chzn-container-single .chzn-single abbr, .chzn-container-single .chzn-single div b, .chzn-container-single .chzn-search input, .chzn-container-multi .chzn-choices .search-choice .search-choice-close, .chzn-container .chzn-results-scroll-down span, .chzn-container .chzn-results-scroll-up span {
-        background-image: url('../img/jquery.chosen/chosen-sprite@2x.png') !important;
+        background-image: url('/public/imgs/flat/jquery.chosen/chosen-sprite@2x.png') !important;
         background-repeat: no-repeat !important;
         background-size: 52px 37px !important;
     }
@@ -8073,7 +8073,7 @@ img.mfp-img {
     padding: 0;
     width: 22px;
     height: 22px;
-    background: url('../img/jquery.icheck/grey.png') no-repeat;
+    background: url('/public/imgs/flat/jquery.icheck/grey.png') no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -8127,7 +8127,7 @@ only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
     .icheckbox_square-grey,
     .iradio_square-grey {
-        background-image: url('../img/jquery.icheck/grey@2x.png');
+        background-image: url('/public/imgs/flat/jquery.icheck/grey@2x.png');
         -webkit-background-size: 240px 24px;
         background-size: 240px 24px;
     }

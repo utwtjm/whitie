@@ -166,7 +166,7 @@ body.login input[type="password"] {
 */
 
 body {
-    background: #393939 url('../img/template/bg.jpg') top left repeat;
+    background: #393939 url('/public/imgs/flat/template/bg.jpg') top left repeat;
     color: #333;
     line-height: 1.6;
     font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -515,7 +515,7 @@ header > .navbar-inner > .container-fluid {
 #primary-nav li a.active,
 #primary-nav li > ul a.active:hover {
     color: #fff;
-    background: #0072bc url('../img/template/grid.png') top left repeat;
+    background: #0072bc url('/public/imgs/flat/template/grid.png') top left repeat;
     border-color: #333;
 }
 
@@ -578,7 +578,7 @@ header > .navbar-inner > .container-fluid {
 
 .block-title {
     margin: 0;
-    background: #ddd url('../img/template/grid_light.png') top left repeat;
+    background: #ddd url('/public/imgs/flat/grid_light.png') top left repeat;
 }
 
 .block-title h1,
@@ -688,7 +688,7 @@ header > .navbar-inner > .container-fluid {
 }
 
 .block.block-themed > .block-title {
-    background: #0072bc url('../img/template/grid.png') top left repeat;
+    background: #0072bc url('/public/imgs/flat/grid.png') top left repeat;
 }
 
 .block.block-themed > .block-content {
@@ -720,7 +720,7 @@ header > .navbar-inner > .container-fluid {
 }
 
 .block-tabs > .nav-tabs {
-    background: #ddd url('../img/template/grid_light.png') top left repeat;
+    background: #ddd url('/public/imgs/flat/grid_light.png') top left repeat;
     border-bottom: 2px solid #ddd;
 }
 
@@ -756,7 +756,7 @@ header > .navbar-inner > .container-fluid {
 }
 
 .block-tabs.block-themed > .nav-tabs {
-    background: #0072bc url('../img/template/grid.png') top left repeat;
+    background: #0072bc url('/public/imgs/flat/grid.png') top left repeat;
     border-bottom: none;
 }
 
@@ -1396,26 +1396,26 @@ pre, code {
     background-size: 16px 16px;
 }
 
-.loader-01 { background-image: url('../img/loading.gifs/loading01.gif'); }
-.loader-02 { background-image: url('../img/loading.gifs/loading02.gif'); }
-.loader-03 { background-image: url('../img/loading.gifs/loading03.gif'); }
-.loader-04 { background-image: url('../img/loading.gifs/loading04.gif'); }
-.loader-05 { background-image: url('../img/loading.gifs/loading05.gif'); }
-.loader-06 { background-image: url('../img/loading.gifs/loading06.gif'); }
-.loader-07 { background-image: url('../img/loading.gifs/loading07.gif'); }
-.loader-08 { background-image: url('../img/loading.gifs/loading08.gif'); }
-.loader-09 { background-image: url('../img/loading.gifs/loading09.gif'); }
-.loader-10 { background-image: url('../img/loading.gifs/loading10.gif'); }
-.loader-11 { background-image: url('../img/loading.gifs/loading11.gif'); }
-.loader-12 { background-image: url('../img/loading.gifs/loading12.gif'); }
-.loader-13 { background-image: url('../img/loading.gifs/loading13.gif'); }
-.loader-14 { background-image: url('../img/loading.gifs/loading14.gif'); }
-.loader-15 { background-image: url('../img/loading.gifs/loading15.gif'); }
-.loader-16 { background-image: url('../img/loading.gifs/loading16.gif'); }
-.loader-17 { background-image: url('../img/loading.gifs/loading17.gif'); }
-.loader-18 { background-image: url('../img/loading.gifs/loading18.gif'); }
-.loader-19 { background-image: url('../img/loading.gifs/loading19.gif'); }
-.loader-20 { background-image: url('../img/loading.gifs/loading20.gif'); }
+.loader-01 { background-image: url('/public/imgs/flat/loading.gifs/loading01.gif'); }
+.loader-02 { background-image: url('/public/imgs/flat/loading.gifs/loading02.gif'); }
+.loader-03 { background-image: url('/public/imgs/flat/loading.gifs/loading03.gif'); }
+.loader-04 { background-image: url('/public/imgs/flat/loading.gifs/loading04.gif'); }
+.loader-05 { background-image: url('/public/imgs/flat/loading.gifs/loading05.gif'); }
+.loader-06 { background-image: url('/public/imgs/flat/loading.gifs/loading06.gif'); }
+.loader-07 { background-image: url('/public/imgs/flat/loading.gifs/loading07.gif'); }
+.loader-08 { background-image: url('/public/imgs/flat/loading.gifs/loading08.gif'); }
+.loader-09 { background-image: url('/public/imgs/flat/loading.gifs/loading09.gif'); }
+.loader-10 { background-image: url('/public/imgs/flat/loading.gifs/loading10.gif'); }
+.loader-11 { background-image: url('/public/imgs/flat/loading.gifs/loading11.gif'); }
+.loader-12 { background-image: url('/public/imgs/flat/loading.gifs/loading12.gif'); }
+.loader-13 { background-image: url('/public/imgs/flat/loading.gifs/loading13.gif'); }
+.loader-14 { background-image: url('/public/imgs/flat/loading.gifs/loading14.gif'); }
+.loader-15 { background-image: url('/public/imgs/flat/loading.gifs/loading15.gif'); }
+.loader-16 { background-image: url('/public/imgs/flat/loading.gifs/loading16.gif'); }
+.loader-17 { background-image: url('/public/imgs/flat/loading.gifs/loading17.gif'); }
+.loader-18 { background-image: url('/public/imgs/flat/loading.gifs/loading18.gif'); }
+.loader-19 { background-image: url('/public/imgs/flat/loading.gifs/loading19.gif'); }
+.loader-20 { background-image: url('/public/imgs/flat/loading.gifs/loading20.gif'); }
 
 /*
 =================================================================
@@ -2304,7 +2304,7 @@ span.add-on {
 }
 
 .table th {
-    background: #0072bc url('../img/template/grid.png') top left repeat;
+    background: #0072bc url('/public/imgs/flat/grid.png') top left repeat;
     color: #fff;
     padding: 14px 8px 10px;
 }
@@ -2450,11 +2450,11 @@ table.table thead .sorting_desc_disabled {
     background-size: 19px 19px;
 }
 
-.table thead .sorting { background-image: url('../img/jquery.datatables/sort_both.png'); }
-.table thead .sorting_asc { background-image: url('../img/jquery.datatables/sort_asc.png'); }
-.table thead .sorting_desc { background-image: url('../img/jquery.datatables/sort_desc.png'); }
-.table thead .sorting_asc_disabled { background-image: url('../img/jquery.datatables/sort_asc_disabled.png'); }
-.table thead .sorting_desc_disabled { background-image: url('../img/jquery.datatables/sort_desc_disabled.png'); }
+.table thead .sorting { background-image: url('/public/imgs/flat/jquery.datatables/sort_both.png'); }
+.table thead .sorting_asc { background-image: url('/public/imgs/flat/jquery.datatables/sort_asc.png'); }
+.table thead .sorting_desc { background-image: url('/public/imgs/flat/jquery.datatables/sort_desc.png'); }
+.table thead .sorting_asc_disabled { background-image: url('/public/imgs/flat/jquery.datatables/sort_asc_disabled.png'); }
+.table thead .sorting_desc_disabled { background-image: url('/public/imgs/flat/jquery.datatables/sort_desc_disabled.png'); }
 
 .dataTable {
 	clear: both;
@@ -3348,41 +3348,41 @@ only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
 
-    body { background-image: url('../img/template/bg@2x.png'); }
+    body { background-image: url('/public/imgs/flat/bg@2x.png'); }
 
     .block-title,
-    .block-tabs > .nav-tabs { background-image: url('../img/template/grid_light@2x.png'); }
+    .block-tabs > .nav-tabs { background-image: url('/public/imgs/flat/grid_light@2x.png'); }
 
     #primary-nav li a.active,
     #primary-nav li > ul a.active:hover,
     .block.block-themed > .block-title,
     .block-tabs.block-themed > .nav-tabs,
-    .table th { background-image: url('../img/template/grid@2x.png'); }
+    .table th { background-image: url('/public/imgs/flat/grid@2x.png'); }
 
-    .table thead .sorting { background-image: url('../img/jquery.datatables/sort_both@2x.png'); }
-    .table thead .sorting_asc { background-image: url('../img/jquery.datatables/sort_asc@2x.png'); }
-    .table thead .sorting_desc { background-image: url('../img/jquery.datatables/sort_desc@2x.png'); }
-    .table thead .sorting_asc_disabled { background-image: url('../img/jquery.datatables/sort_asc_disabled@2x.png'); }
-    .table thead .sorting_desc_disabled { background-image: url('../img/jquery.datatables/sort_desc_disabled@2x.png'); }
+    .table thead .sorting { background-image: url('/public/imgs/flat/jquery.datatables/sort_both@2x.png'); }
+    .table thead .sorting_asc { background-image: url('/public/imgs/flat/jquery.datatables/sort_asc@2x.png'); }
+    .table thead .sorting_desc { background-image: url('/public/imgs/flat/jquery.datatables/sort_desc@2x.png'); }
+    .table thead .sorting_asc_disabled { background-image: url('/public/imgs/flat/jquery.datatables/sort_asc_disabled@2x.png'); }
+    .table thead .sorting_desc_disabled { background-image: url('/public/imgs/flat/jquery.datatables/sort_desc_disabled@2x.png'); }
 
-    .loader-01 { background-image: url('../img/loading.gifs/loading01@2x.gif'); }
-    .loader-02 { background-image: url('../img/loading.gifs/loading02@2x.gif'); }
-    .loader-03 { background-image: url('../img/loading.gifs/loading03@2x.gif'); }
-    .loader-04 { background-image: url('../img/loading.gifs/loading04@2x.gif'); }
-    .loader-05 { background-image: url('../img/loading.gifs/loading05@2x.gif'); }
-    .loader-06 { background-image: url('../img/loading.gifs/loading06@2x.gif'); }
-    .loader-07 { background-image: url('../img/loading.gifs/loading07@2x.gif'); }
-    .loader-08 { background-image: url('../img/loading.gifs/loading08@2x.gif'); }
-    .loader-09 { background-image: url('../img/loading.gifs/loading09@2x.gif'); }
-    .loader-10 { background-image: url('../img/loading.gifs/loading10@2x.gif'); }
-    .loader-11 { background-image: url('../img/loading.gifs/loading11@2x.gif'); }
-    .loader-12 { background-image: url('../img/loading.gifs/loading12@2x.gif'); }
-    .loader-13 { background-image: url('../img/loading.gifs/loading13@2x.gif'); }
-    .loader-14 { background-image: url('../img/loading.gifs/loading14@2x.gif'); }
-    .loader-15 { background-image: url('../img/loading.gifs/loading15@2x.gif'); }
-    .loader-16 { background-image: url('../img/loading.gifs/loading16@2x.gif'); }
-    .loader-17 { background-image: url('../img/loading.gifs/loading17@2x.gif'); }
-    .loader-18 { background-image: url('../img/loading.gifs/loading18@2x.gif'); }
-    .loader-19 { background-image: url('../img/loading.gifs/loading19@2x.gif'); }
-    .loader-20 { background-image: url('../img/loading.gifs/loading20@2x.gif'); }
+    .loader-01 { background-image: url('/public/imgs/flat/loading.gifs/loading01@2x.gif'); }
+    .loader-02 { background-image: url('/public/imgs/flat/loading.gifs/loading02@2x.gif'); }
+    .loader-03 { background-image: url('/public/imgs/flat/loading.gifs/loading03@2x.gif'); }
+    .loader-04 { background-image: url('/public/imgs/flat/loading.gifs/loading04@2x.gif'); }
+    .loader-05 { background-image: url('/public/imgs/flat/loading.gifs/loading05@2x.gif'); }
+    .loader-06 { background-image: url('/public/imgs/flat/loading.gifs/loading06@2x.gif'); }
+    .loader-07 { background-image: url('/public/imgs/flat/loading.gifs/loading07@2x.gif'); }
+    .loader-08 { background-image: url('/public/imgs/flat/loading.gifs/loading08@2x.gif'); }
+    .loader-09 { background-image: url('/public/imgs/flat/loading.gifs/loading09@2x.gif'); }
+    .loader-10 { background-image: url('/public/imgs/flat/loading.gifs/loading10@2x.gif'); }
+    .loader-11 { background-image: url('/public/imgs/flat/loading.gifs/loading11@2x.gif'); }
+    .loader-12 { background-image: url('/public/imgs/flat/loading.gifs/loading12@2x.gif'); }
+    .loader-13 { background-image: url('/public/imgs/flat/loading.gifs/loading13@2x.gif'); }
+    .loader-14 { background-image: url('/public/imgs/flat/loading.gifs/loading14@2x.gif'); }
+    .loader-15 { background-image: url('/public/imgs/flat/loading.gifs/loading15@2x.gif'); }
+    .loader-16 { background-image: url('/public/imgs/flat/loading.gifs/loading16@2x.gif'); }
+    .loader-17 { background-image: url('/public/imgs/flat/loading.gifs/loading17@2x.gif'); }
+    .loader-18 { background-image: url('/public/imgs/flat/loading.gifs/loading18@2x.gif'); }
+    .loader-19 { background-image: url('/public/imgs/flat/loading.gifs/loading19@2x.gif'); }
+    .loader-20 { background-image: url('/public/imgs/flat/loading.gifs/loading20@2x.gif'); }
 }
