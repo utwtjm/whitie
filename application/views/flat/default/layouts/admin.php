@@ -24,7 +24,6 @@
     <? add_name(array('viewport' => lang_get('global_viewport')) );  ?>
    
     <!-- Icons -->
-    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
     <? add_icon(array('rel' => 'shortcut icon', 'type' => 'image/ico', 'href' => 'favicon.ico') );  ?>
     <? add_icon(array('rel' => 'apple-touch-icon', 'href' => 'apple-touch-icon.png') );  ?>
     <? add_icon(array('rel' => 'apple-touch-icon', 'sizes' => "57x57", 'href' => 'apple-touch-icon-57x57-precomposed.png') );  ?>
@@ -32,74 +31,42 @@
     <? add_icon(array('rel' => 'apple-touch-icon', 'sizes' => "114x114", 'href' => 'apple-touch-icon-114x114-precomposed.png') );  ?>
     <? add_icon(array('rel' => 'apple-touch-icon-precomposed', 'href' => 'apple-touch-icon-precomposed.png') );  ?>
     <? add_icon(array('rel' => 'shortcut icon', 'type' => 'image/ico', 'href' => 'favicon.ico') );  ?>
-    
-    <!-- END Icons -->
-
-    <!-- Stylesheets -->
-    <!-- The roboto font is included from Google Web Fonts -->
-    <?/*
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic">
-    */?>
-
-    <!-- Bootstrap is included in its original form, unaltered -->
+   
+    <!-- css -->
     <? add_css('bootstrap'); ?>
-
-    <!-- Related styles of various icon packs and javascript plugins -->
     <? add_css('plugins'); ?>
-
-    <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
     <? add_css('main'); ?>
-
-    <!-- Load a specific file here from /public/themes/flat_admin/css/themes/ folder to alter the default theme of all the template -->
-
-    <!-- The themes stylesheet of this template (for using specific theme color in individual elements (must included last) -->
+    <? add_css('themes/city.css'); ?>
     <? add_css('themes'); ?>
-    <!-- END Stylesheets -->
-
-    <!-- Modernizr (Browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it) -->
-    <? add_script('modernizr-2.6.2-respond-1.1.0.min'); ?>
-
-
-    <!-- Get Jquery library from Google ... -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <!-- ... but if something goes wrong get Jquery from local file -->
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
-
     
+    <!-- js -->
+    <? add_script('modernizr-2.6.2-respond-1.1.0.min'); ?>
 </head>
 
-<!-- Body -->
-<!-- In the PHP version you can set the following options from the config file -->
-<!-- Add the class .hide-side-content to <body> to hide side content by default -->
 <body class="header-fixed-top">
 
-    <!-- Page Container -->
-    <!-- In the PHP version you can set the following options from the config file -->
-    <!-- Add the class .full-width for a full width page -->
     <div id="page-container">
 
-        <?php echo $this->template->layout_block('admin_header') ?>
+        <?php echo $this->template->layout_block('default_header') ?>
+        <?php echo $this->template->layout_block('default_sidebar') ?>
+        <?php echo $this->template->layout_block('default_pre_content') ?>
 
-        <?php echo $this->template->layout_block('admin_sidebar') ?>
-       
-        <?php echo $this->template->layout_block('admin_pre_content') ?>
+        <div id="page-content">
+            <?php echo $this->template->message(); ?>
+            <?php echo $this->template->yield(); ?>
+        </div>
 
-        <?php echo $this->template->yield(); ?>
-
-        <?php echo $this->template->layout_block('admin_footer') ?>
-
+        <?php echo $this->template->layout_block('default_footer') ?>
+        
     </div>
-    <!-- END Page Container -->
 
     <!-- Scroll to top link, check main.js - scrollToTop() -->
     <a href="#" id="to-top"><i class="icon-chevron-up"></i></a>
 
     <!-- User Modal Account, appears when clicking on 'User Settings' link found on user dropdown menu (header, top right) -->
     <div id="modal-user-account" class="modal hide fade">
-        <!-- Modal Body -->
         <div class="modal-body remove-padding">
-            <!-- Modal Tabs -->
-            <div class="block-tabs">
+           <div class="block-tabs">
                 <div class="block-options">
                     <a href="javascript:void(0)" class="btn btn-danger" data-dismiss="modal"><i class="icon-remove"></i></a>
                 </div>
@@ -144,8 +111,7 @@
                             </div>
                         </form>
                     </div>
-                    <!-- END Account Tab Content -->
-
+                  
                     <!-- Profile Tab Content -->
                     <div class="tab-pane" id="modal-user-account-profile">
                         <form action="index.html" method="post" class="form-horizontal" onsubmit="return false;">
@@ -193,39 +159,24 @@
                             </div>
                         </form>
                     </div>
-                    <!-- END Profile Tab Content -->
                 </div>
             </div>
-            <!-- END Modal Tabs -->
         </div>
-        <!-- END Modal Body -->
 
         <!-- Modal footer -->
         <div class="modal-footer">
             <button class="btn btn-success" data-dismiss="modal"><i class="icon-save"></i> Save</button>
         </div>
-        <!-- END Modal footer -->
     </div>
-    <!-- END User Modal Settings -->
 
-    <!-- Excanvas for Flot (Charts plugin) support on IE8 -->
-    <!--[if lte IE 8]><script src="/public/themes/flat_admin/js/helpers/excanvas.min.js"></script><![endif]-->
+    <!-- Get Jquery library from Google ... -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>
 
-    <!--
-    Include Google Maps API for global use.
-    If you don't want to use  Google Maps API globally, just remove this line and the gmaps.js plugin from /public/themes/flat_admin/js/plugins.js (you can put it in a seperate file)
-    Then iclude them both in the pages you would like to use the google maps functionality
-    -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-    <!-- Bootstrap.js -->
+    <!-- js -->
     <? add_script('bootstrap.min'); ?>
-
-    <!-- Jquery plugins and custom javascript code -->
     <? add_script('plugins'); ?>
     <? add_script('main'); ?>
-    <!-- Javascript code only for this page -->
-
 
 </body>
 </html>
