@@ -1,0 +1,126 @@
+http://www.tinymce.com/wiki.php/Plugins
+http://www.tinymce.com/wiki.php/Plugin:media
+{
+        mode : "exact", 		// 可以將不是 textarea 的轉成編輯器
+        elements : "elm1,elm2",	// elm1，textarea 的 id
+        width : "100%", 
+        theme : "advanced",		// 可以讓 user 新增刪除 button and panels 可以有什麼 ? 
+        skin : "o2k7",			// 可以自製，但目前用預設的 
+        language : "en",		// 預設用英文，應該可以去找看看 wordpress 裡面的實作
+        theme_advanced_toolbar_location : "top",		// toolbar 出現在最上面
+        theme_advanced_toolbar_align : "left",			// toolbar 靠左
+        theme_advanced_statusbar_location : "bottom",	// editor 的 footer 放在最下面
+       	theme_advanced_resizing :　true, 				// 右下的放大縮小按鈕?
+       	theme_advanced_resize_horizontal : false, 		// 設為 false 就只能重直放大，如果設為 true 就可以水平跟重直放大?
+       	dialog_type : 'modal', 		// 可以選擇 popup 或  window ，但只有在 ie 才會跳出 popup
+       	formats: {
+	        alignleft : [
+				{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'left'}},
+				{selector : 'img,table', classes : 'alignleft'}
+			],
+			aligncenter : [
+				{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'center'}},
+				{selector : 'img,table', classes : 'aligncenter'}
+			],
+			alignright : [
+				{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'right'}},
+				{selector : 'img,table', classes : 'alignright'}
+			]
+		}, 	// 應該是覆寫 editor 某些按鍵按下去之後會添加的格式 ex: 如果加上 bold : {inline: 'span', 'classes': 'bold'} ，原本的是 <strong>121313</strong> 會變成 <span class="bold">123232</span>
+		'relative_urls' => false,	// 如果設定為 true 會依照 config 的 document_base_url 來對應 url?
+		'remove_script_host' => false, // 不懂
+        convert_urls : false	// 不懂
+        'remove_linebreaks' => true, // 移除換行? 網路上有人說這個不見了? 還真的不見了
+        'fix_list_elements' => true, // 將不合法的 ul / ol 轉成合法的
+        'keep_styles' => false, // This option enables keeping the current text style when you press enter/return，是否要保持現在的 style , ex: 12121 變成 bold 後，按 enter 換下一行時是否要 下一行也是 bold
+        'entities' => '38,amp,60,lt,62,gt',  // 將字元 38 換成 amp ..，不懂
+        'accessibility_focus' => true,	// 沒這屬性，文件上沒有但 tinymce_src.js 有 ，不懂
+		'media_strict' => false,	// 沒這屬性 media plugin
+		'paste_remove_styles' => true,// 沒這屬性 paste plugin
+		'paste_remove_spans' => true,// 沒這屬性 paste plugin
+		'paste_strip_class_attributes' => 'all',// 沒這屬性 paste plugin
+		'paste_text_use_dialog' => true,// 沒這屬性 paste plugin
+		'webkit_fake_resize' => false,// 沒這屬性 文件沒有但實作有 不懂
+		'preview_styles' => 'font-family font-weight text-decoration text-transform', // wp 自制
+		'schema' => 'html5',	// 編輯器裡面的 html 格式
+		'wpeditimage_disable_captions' => $no_captions, // wp 自製, wpeditimage plugin
+		'wp_fullscreen_content_css' => self::$baseurl . '/plugins/wpfullscreen/css/wp-fullscreen.css', // wp 自製，wpfullscreen plugin
+		'plugins' => implode( ',', $plugins ) // 要載入的 plugin
+      'content_css' => string 'http://hello.wordpress.com/wp-content/themes/twentytwelve/editor-style.css' // 復寫原生的 css
+      'wpautop' => boolean true // wp-fullscreen.min.js plugin
+      'apply_source_formatting' => 某些 tag 會加上 line break 依 indent_before and indent_after 指定的 tag
+      'theme_advanced_buttons1' => string 'bold,italic,strikethrough,bullist,numlist,blockquote,justifyleft,justifycenter,justifyright,link,unlink,wp_more,spellchecker,fullscreen,wp_adv,sp_calendar_mce' // 原本有這屬性，但 wp 有做修改，所以我還是移掉 wp 的
+      'theme_advanced_buttons2' => string 'formatselect,underline,justifyfull,forecolor,pastetext,pasteword,removeformat,charmap,outdent,indent,undo,redo,wp_help' // 原本有這屬性，但 wp 有做修改，所以我還是移掉 wp 的
+      'theme_advanced_buttons3' => string ''
+      'theme_advanced_buttons4' => string ''
+      'tabfocus_elements' => string ':prev,:next' // tabfocus plugin
+      'body_class' => 'content1' // 每一個 edit 內容都會加上 content1 的class
+      'theme_advanced_resizing_use_cookie' => true // 將 theme 的 size 記在 cookie
+    }
+
+}
+
+
+
+
+// wordpress 設定
+'mode' => string 'exact' (length=5)
+  'width' => string '100%' (length=4)
+  'theme' => string 'advanced' (length=8)
+  'skin' => string 'wp_theme' (length=8)
+  'language' => string 'zh' (length=2)
+  'theme_advanced_toolbar_location' => string 'top' (length=3)
+  'theme_advanced_toolbar_align' => string 'left' (length=4)
+  'theme_advanced_statusbar_location' => string 'bottom' (length=6)
+  'theme_advanced_resizing' => boolean true
+  'theme_advanced_resize_horizontal' => boolean false
+  'dialog_type' => string 'modal' (length=5)
+  'formats' => string '{
+						alignleft : [
+							{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'left'}},
+							{selector : 'img,table', classes : 'alignleft'}
+						],
+						aligncenter : [
+							{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'center'}},
+							{selector : 'img,table', classes : 'aligncenter'}
+						],
+						alignright : [
+							{selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'right'}},
+							{selector : 'img,table', cla'... (length=587)
+  'relative_urls' => boolean false
+  'remove_script_host' => boolean false
+  'convert_urls' => boolean false
+  'remove_linebreaks' => boolean true
+  'gecko_spellcheck' => boolean true
+  'fix_list_elements' => boolean true
+  'keep_styles' => boolean false
+  'entities' => string '38,amp,60,lt,62,gt' (length=18)
+  'accessibility_focus' => boolean true
+  'media_strict' => boolean false
+  'paste_remove_styles' => boolean true
+  'paste_remove_spans' => boolean true
+  'paste_strip_class_attributes' => string 'all' (length=3)
+  'paste_text_use_dialog' => boolean true
+  'webkit_fake_resize' => boolean false
+  'preview_styles' => string 'font-family font-weight text-decoration text-transform' (length=54)
+  'schema' => string 'html5' (length=5)
+  'wpeditimage_disable_captions' => boolean false
+  'wp_fullscreen_content_css' => string 'http://hello.wordpress.com/wp-includes/js/tinymce/plugins/wpfullscreen/css/wp-fullscreen.css' (length=92)
+  'plugins' => string 'inlinepopups,tabfocus,paste,media,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,-sp_calendar_mce' (length=110)
+  'content_css' => string 'http://hello.wordpress.com/wp-content/themes/twentytwelve/editor-style.css' (length=74)
+  'elements' => string 'content1' (length=8)
+  'wpautop' => boolean true
+  'apply_source_formatting' => boolean false
+  'theme_advanced_buttons1' => string 'bold,italic,strikethrough,bullist,numlist,blockquote,justifyleft,justifycenter,justifyright,link,unlink,wp_more,spellchecker,fullscreen,wp_adv,sp_calendar_mce' (length=158)
+  'theme_advanced_buttons2' => string 'formatselect,underline,justifyfull,forecolor,pastetext,pasteword,removeformat,charmap,outdent,indent,undo,redo,wp_help' (length=118)
+  'theme_advanced_buttons3' => string '' (length=0)
+  'theme_advanced_buttons4' => string '' (length=0)
+  'tabfocus_elements' => string ':prev,:next' (length=11)
+  'body_class' => string 'content1' (length=8)
+  'theme_advanced_resizing_use_cookie' => boolean true
+
+
+//  this.getDoc(...) is undefined
+設定 theme 為 advanced 時要一起設定 skin
+
+// 感覺加了 plugin 之後就變成跳 popup 了?

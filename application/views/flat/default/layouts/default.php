@@ -169,6 +169,8 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
     <!-- Get Jquery library from Google ... -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo public_js_url('/flat/jquery-1.9.1.min.js')?>"%3E%3C/script%3E'));</script>

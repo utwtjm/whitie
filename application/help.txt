@@ -307,5 +307,47 @@ http://stackoverflow.com/questions/5029077/how-i-can-add-multi-tinymce-editors-w
 
 // 在改 css file imgs js 架構時可以用 firebug 檢查有哪些檔案路徑沒改到
 
+// ajax 時被登出
+1. 用 ajaxerror handler
+2. filter redirect時加上 error code
+3. 準備一個 controller 判斷為何
+4. http://php.net/manual/en/function.http-response-code.php
+http://blog.cnizz.com/2013/05/28/using-jquery-ajaxerror-to-automatically-handle-session-expiration-and-server-side-errors/
+
+// tinymce config
+{
+        mode : "exact",         // 可以將不是 textarea 的轉成編輯器
+        elements : "elm1,elm2", // elm1，textarea 的 id
+        width : "100%", 
+        theme : "advance",      // 可以讓 user 新增刪除 button and panels 可以有什麼 ? 
+        skin : "o2k7",          // 可以自製，但目前用預設的 
+        language : "en",        // 預設用英文，應該可以去找看看 wordpress 裡面的實作
+        theme_advanced_toolbar_location : "top",        // toolbar 出現在最上面
+        theme_advanced_toolbar_align : "left",          // 靠左吧，我想?
+        theme_advanced_statusbar_location : "bottom",   // This option enables you to specify where the element statusbar with the path and resize tool should be located
+        待測，不是很懂 statusbar 是啥
+        theme_advanced_resizing :　true,                 // 右下的放大縮小按鈕?
+        theme_advanced_resize_horizontal : false,       // 如果設為 true 就可以水平跟重直放大?
+        dialog_type : 'modal',      // 可以選擇 popup 或  window
+        formats: {
+            alignleft : [
+                {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'left'}},
+                {selector : 'img,table', classes : 'alignleft'}
+            ],
+            aligncenter : [
+                {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'center'}},
+                {selector : 'img,table', classes : 'aligncenter'}
+            ],
+            alignright : [
+                {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles : {textAlign : 'right'}},
+                {selector : 'img,table', classes : 'alignright'}
+            ],
+            strikethrough : {inline : 'del'}
+        },  // 應該是覆寫 editor 某些按鍵按下去之後會添加的格式
+        'relative_urls' => false,   // 如果設定為 true 會依照 config 的 document_base_url 來對應 url?
+        'remove_script_host' => false, // 不懂
+    }
+
+}
 
 

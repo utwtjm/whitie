@@ -1,5 +1,4 @@
-<!-- Page Content -->
-<div id="page-content">
+
     <!-- Dashboard Tiles Block -->
     <div class="block block-tiles block-tiles-animated clearfix">
         <a href="javascript:void(0)" class="tile tile-height-2x tile-themed themed-background-tulip">
@@ -460,8 +459,6 @@
         <!-- END Latest Uploaded Projects Content -->
     </div>
     <!-- END Latest Uploaded Projects Block -->
-</div>
-<!-- END Page Content -->
 
 <script>
 $(function() {
