@@ -1,0 +1,1 @@
+<textarea id="content1" name="content1"></textarea>

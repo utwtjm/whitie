@@ -124,3 +124,6 @@ http://www.tinymce.com/wiki.php/Plugin:media
 設定 theme 為 advanced 時要一起設定 skin
 
 // 感覺加了 plugin 之後就變成跳 popup 了?
+
+// 如果要加一個 button，是 plugin 的話就要先載入 plugin，再看他的名字是啥
+http://www.tinymce.com/wiki.php/TinyMCE3x:Buttons/controls // 所有的 button 名字

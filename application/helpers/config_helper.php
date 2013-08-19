@@ -63,6 +63,20 @@ function permission_config_get($item = null) {
 
 /**
 *
+* 取得 tinymce 的 config
+*
+* @access   public
+* @param    param (type) : param description
+* @return   return : return description
+*
+*/
+function tiny_mce_config_get($item = null) {
+    $tiny_mce = config_get($item, 'tiny_mce');
+    return $tiny_mce;
+}
+
+/**
+*
 * 取得 upload 的 config
 *
 * @access   public

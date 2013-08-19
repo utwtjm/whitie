@@ -857,14 +857,11 @@ class Ocular_Template {
 
 class Template extends Ocular_Template {
 
-	public function __construct() 
-	{
-
+	public function __construct() {
 		parent::__construct();
 
 		// 小白修改的 
 		$this->default_theme = $this->ci->config->item('OCU_default_theme') . '/' . $this->ci->config->item('OCU_agent_theme');
-		
 	}
 
 	/**
@@ -1074,9 +1071,7 @@ class Template extends Ocular_Template {
 	*
 	*/
 	public function default_view($block_view_name) {
-
 		return layout_folder() . $block_view_name;
-
 	}
 
 	/**
@@ -1089,11 +1084,8 @@ class Template extends Ocular_Template {
 	*
 	*/
 	public function layout_block($block_name) {
-
 		return $this->block($block_name, $this->default_view($block_name));
-
 	}
-	
 
 }
 
