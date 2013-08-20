@@ -1,1 +1,1 @@
-<textarea id="content1" name="content1"></textarea>
+<textarea id="<?php echo $id; ?>" name="<?php echo $name; ?>" class="<?php echo $class?>"></textarea>

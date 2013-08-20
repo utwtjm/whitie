@@ -24,20 +24,38 @@ class Editor_service extends Base_service {
 
 	/**
 	 *
-	 * 顯示 editor
+	 * 要 render 哪種模式，有 exact or textareas 或其他..
 	 *
 	 * @param type param
-	 *
+	 *, 
 	 */
-	public function render($config = array()) {	
+	public function render($selector, $config = array()) {	
 		$default_config = tiny_mce_config_get();
 		$default_config = array_merge($default_config, $config);
+		$mode = $default_config['mode'];
+		if($mode == 'exact') {
+			$default_config['elements'] = $selector;
+		} else {
+			$default_config['editor_selector'] = $selector;
+		}
 		if(is_null($this->editor)) {
 			$this->editor = new Tiny_mce($default_config);
 		} else {
 			$this->editor->set_config($default_config);
 		}
 		return $this->editor->render();
+	}
+
+	/**
+	 *
+	 * 多個　editor
+	 *
+	 * @param type param
+	 *
+	 */
+	public function multi_render($name, $config=array()) {
+		$config['mode'] = "textareas";
+		return $this->render($name, $config);
 	}
 
 }
@@ -79,9 +97,10 @@ Class Tiny_mce extends Base_service{
 	 */
 	public function render() {
 		$js_config = $this->get_js_config();
-		$data = array('js_config'=>$js_config);
-		$content = $this->template->block('tiny_mce_js', 'tiny_mce/js', $data);
-		$content .= $this->template->block('tiny_mce_textarea', 'tiny_mce/textarea');
+		$js_data = array('js_config'=>$js_config);
+		$content = $this->template->block('tiny_mce_init', 'tiny_mce/init', $js_data);
+		$textarea_data = array('name'=>$this->config['editor_selector'], 'id'=>$this->config['editor_selector'], 'class'=>$this->config['editor_selector']);
+		$content .= $this->template->block('tiny_mce_textarea', 'tiny_mce/textarea', $textarea_data);
 		return $content;
 	}
 
