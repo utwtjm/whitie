@@ -1,0 +1,8 @@
+// local test
+http://stackoverflow.com/questions/2459728/how-to-test-facebook-connect-locally
+
+// 建立應用程式
+1. https://developers.facebook.com/apps -> 建立應用程式
+2. 關閉沙盒
+
+// signed_request 好像是在 facbook 裡面的 app 會收到的變數

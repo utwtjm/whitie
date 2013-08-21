@@ -2,6 +2,7 @@
 /**
  * Please note this file shouldn't be exposed on a live server,
  * there is no filtering of $_POST!!!!
+ * 目前先把 session_destory 取消，原本看網路上是說 session 沒 destory，assert 會被 cache 但我測試並沒有耶
  */
 error_reporting(-1);
 
@@ -78,7 +79,7 @@ ob_end_clean();
 $CI->load->library('session');
 $CI->load->helper('directory');
 $CI->load->helper('form');
-$CI->session->sess_destroy();
+// $CI->session->sess_destroy();
 
 // Get all main tests
 if ($run_all OR ( ! empty($_POST) && ! isset($_POST['test'])))

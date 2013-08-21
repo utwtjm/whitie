@@ -10,7 +10,7 @@ class Captcha_service extends Base_service {
 		parent::__construct();
 
 		// third_party
-		$this->third_party->load('securimage/securimage');
+		third_party_load('securimage/securimage');
 
 		// init
 		$this->image_type = Securimage::SI_IMAGE_PNG;

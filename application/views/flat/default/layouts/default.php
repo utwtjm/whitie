@@ -36,7 +36,7 @@
     <? add_css('flat/bootstrap'); ?>
     <? add_css('flat/plugins'); ?>
     <? add_css('flat/main'); ?>
-    <? add_css('flat/themes/city.css'); ?>
+    <? add_css('flat/themes/asphalt.css'); ?>
     <? add_css('flat/themes'); ?>
     
     <!-- js -->
