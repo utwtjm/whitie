@@ -63,49 +63,6 @@ function permission_config_get($item = null) {
 
 /**
 *
-* 取得 tinymce 的 config
-*
-* @access   public
-* @param    param (type) : param description
-* @return   return : return description
-*
-*/
-function tiny_mce_config_get($item = null) {
-    $tiny_mce = config_get($item, 'tiny_mce');
-    return $tiny_mce;
-}
-
-/**
-*
-* 取得 facebook 的 config
-*
-* @access   public
-* @param    param (type) : param description
-* @return   return : return description
-*
-*/
-function facebook_config_get($item = null) {
-    $facebook = config_get($item, 'facebook');
-    return $facebook;
-}
-
-/**
-*
-* 取得 upload 的 config
-*
-* @access   public
-* @param    param (type) : param description
-* @return   return : return description
-*
-*/
-function upload_config_get($item = '') {
-    $upload = config_get($item, 'upload');
-    return $upload;
-}
-
-
-/**
-*
 * 取得 public folder
 *
 * @access   public

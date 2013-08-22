@@ -24,13 +24,24 @@ class Editor_service extends Base_service {
 
 	/**
 	 *
+	 * 取得 editor config
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_config($item = null) {
+		return parent::get_config($item, 'tiny_mce');
+	}
+
+	/**
+	 *
 	 * 要 render 哪種模式，有 exact or textareas 或其他..
 	 *
 	 * @param type param
 	 *, 
 	 */
 	public function render($selector, $config = array()) {	
-		$default_config = tiny_mce_config_get();
+		$default_config = $this->get_config();
 		$default_config = array_merge($default_config, $config);
 		$mode = $default_config['mode'];
 		if($mode == 'exact') {

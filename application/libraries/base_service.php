@@ -29,6 +29,11 @@ class Base_service {
 		return $this->_ci->$var;
 	}
 
+	public function get_config($item = null, $index = null) {
+		$config = config_get($item, $index);
+    	return $config;
+	}
+
 }
 
 ?>

@@ -20,9 +20,20 @@ class Facebook_service extends Base_service {
 
 		// init
 		$this->facebook = new MY_Facebook(array(
-		  'appId'  => facebook_config_get('app_id'),
-		  'secret' => facebook_config_get('app_secret')
+		  'appId'  => $this->get_config('app_id'),
+		  'secret' => $this->get_config('app_secret')
 		));
+	}
+
+	/**
+	 *
+	 * 取得 facebook config
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_config($item = null) {
+		return parent::get_config($item, 'facebook');
 	}
 
 	/**

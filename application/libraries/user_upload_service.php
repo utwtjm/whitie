@@ -40,6 +40,16 @@ class User_upload_service extends Base_service {
 		}
 	}
 
+	/**
+	 *
+	 * 取得 upload config
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_config($item = null) {
+		return parent::get_config($item, 'upload');
+	}
 
 	/**
 	*
@@ -60,7 +70,7 @@ class User_upload_service extends Base_service {
 		if(isset($config['file_names'])) {
 			$file_names = $config['file_names'];
 		} else {
-			$file_names = upload_config_get('file_names');
+			$file_names = $this->get_config('file_names');
 		}
 
 		// 上傳
