@@ -81,8 +81,64 @@ class Facebook_service extends Base_service {
 	public function get_logout_url() {
 		return $this->facebook->getLogoutUrl();
 	}
+
+	/**
+	 *
+	 * 登出 facebook
+	 *
+	 * @param type param
+	 *
+	 */
+	public function logout() {
+		$this->facebook->destroySession();
+	}
+
+	/**
+	 *
+	 * 取得 token
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_token() {
+		return$this->facebook->getAccessToken();
+	}
+
+	/**
+	 *
+	 * 取得 token 過期時間
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_token_expires_at($input_token = null) {
+		return $this->get_token_data($input_token, 'expires_at');
+	}
+
+	/**
+	 *
+	 * 取得 token 過期時間
+	 *
+	 * @param type param
+	 *
+	 */
+	public function get_token_data($input_token = null, $field_name = null) {
+		if(is_null($input_token)) {
+			$input_token = $this->get_token();
+		}
+		$token_data = $this->facebook->api('/debug_token', array('input_token'=>$input_token));
+		if(is_null($field_name)) {
+			return $token_data;
+		}
+		if(!isset($token_data['data'][$field_name])) {
+			return null;
+		}
+		return $token_data['data'][$field_name];
+	}
+
 }
 
+// 如果有要 override 才放在這，但如果有 library 是無法傳 config 進去的，則可以 extends 之後，在 __construct 設定 config，ex :  phpmailer
 class MY_Facebook extends Facebook {
 
 	public function __construct($config) {

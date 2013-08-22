@@ -188,7 +188,7 @@ function show_result($result, $type = null, $class = null, $function = null) {
 	echo '<div class="result">PASSED</div>';
 	echo '<h3>'.$function_name.' - <a href="#" style="color:green;" onclick=\'show_result("'.$id.'");return false;\'>顯示結果</a></h3>';
 	echo '<div class="details" style="display:none;" id="'.$id.'">';
-	if($type == 'image') {
+	if($type == 'image' || $type == 'link') {
 		echo $result;
 	} else {
 		echo var_dump($result);				
@@ -207,6 +207,18 @@ function show_result($result, $type = null, $class = null, $function = null) {
 function show_image($result) {
 	$backtrace = debug_backtrace();
 	return show_result($result, 'image', $backtrace[1]['class'], $backtrace[1]['function']);
+}
+
+/**
+ *
+ * 顯示圖片
+ *
+ * @param type param
+ *
+ */
+function show_link($result) {
+	$backtrace = debug_backtrace();
+	return show_result($result, 'link', $backtrace[1]['class'], $backtrace[1]['function']);
 }
 
 /**
