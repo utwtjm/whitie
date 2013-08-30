@@ -288,6 +288,25 @@ class Test_Controller extends CI_Controller {
 		return $this->_run($value, $expected, $notes);
 	}
 
+	
+    /**
+     *
+     * 驗證結果，原本想要把 clear_result 放在這裡呼叫，但會變的跟原本不一樣，變的讓人呼叫是需要考慮，所以還是放在外面
+     *
+     * @param mixed $test 測試的結果
+     * @param mixed $expected 預期的結果
+     * @param mixed $clear_results 是否要記錄每一個結果
+     *
+     */
+    public function run($test, $expected = true, $test_name = 'undefined', $notes = '') {
+        if(!is_string($notes)) {
+            $notes = json_encode($notes);
+        }
+        $result = parent::run($test, $expected, $test_name, $notes);
+        return $result;
+    }
+
+
 	/**
 	 *
 	 * 測試

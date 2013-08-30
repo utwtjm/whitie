@@ -51,7 +51,7 @@ class MY_Unit_test extends CI_Unit_test {
 
     /**
      *
-     * 驗證結果，原本想要把 clear_result 放在這裡呼叫，但會變的跟原本不一樣，變的讓人呼叫是需要考慮，所以還是放在外面
+     * 驗證結果，原本想要把這個在 test_controller 裡，但如果別人要用的話就沒辦法用了，所以還是放在吧
      *
      * @param mixed $test 測試的結果
      * @param mixed $expected 預期的結果
