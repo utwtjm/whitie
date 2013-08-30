@@ -15,9 +15,9 @@
 * @return 	return : return description
 *
 */
-function now_datetime() {
+function now_datetime($format = DATETIME_FORMAT) {
 	$now = now();
-	return date("Y-m-d H:i:s", $now); 	
+	return format_time($format, $now); 		
 }
 
 /**
@@ -29,9 +29,20 @@ function now_datetime() {
 * @return 	return : return description
 *
 */
-function now_date() {
+function now_date($format = DATE_FORMAT) {
 	$now = now();
-	return date("Y-m-d", $now); 	
+	return format_time($format, $now); 	
+}
+
+/**
+ *
+ * 取得格式化的時間
+ *
+ * @param type param
+ *
+ */
+function format_time($format, $time) {
+	return date($format, $time);
 }
 
 ?>

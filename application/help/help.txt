@@ -350,4 +350,11 @@ http://blog.cnizz.com/2013/05/28/using-jquery-ajaxerror-to-automatically-handle-
 
 }
 
+// ci set_test_items 用法
+1. $this->unit->set_test_items(array('test_name', 'result')); 
+2. echo $this->unit->run(xxx);
+3. 結果會出現測試名稱->result
+
+// 外國人的 test_controller
+https://github.com/sepehr/ci-test-controller
 

@@ -55,7 +55,7 @@ class Facebook_service extends Base_service {
 	 * @param type param
 	 *
 	 */
-	public function get_redirect_login_url($redirect_uri) {
+	public function get_redirect_login_url($redirect_uri, $params = array()) {
 		$params['redirect_uri'] = $redirect_uri;
 		return $this->facebook->getLoginUrl($params);
 	}

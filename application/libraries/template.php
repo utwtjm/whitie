@@ -1058,9 +1058,6 @@ class Template extends Ocular_Template {
 		$this->_mark('Template_Render_end');
 	}
 
-
-
-
 	/**
 	*
 	* theme 裡面的 block 所需要的 default view

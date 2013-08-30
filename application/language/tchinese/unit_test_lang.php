@@ -7,5 +7,7 @@ $lang['ut_result'] = '測試結果';
 $lang['ut_file'] = '測試檔名';
 $lang['ut_line'] = '測試行數';
 $lang['ut_notes'] = '測試註解';
+$lang['ut_passed'] = '通過';
+$lang['ut_failed'] = '失敗';
 
 ?>

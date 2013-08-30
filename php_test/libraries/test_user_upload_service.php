@@ -425,14 +425,16 @@ class Test_user_upload_service extends CodeIgniterUnitTestCase {
      *
      */
     public function test_create_thumb_file_and_not_exist_orig_img() {
+        $error = "";
         try {
             $sizes = array(new Size(70, 70));
             $test_fail_avatar_file = 'php_test/files/test-60x60.jpg';
             $avatar_thumb_files = $this->user_upload_service->create_thumb_file($test_fail_avatar_file, $sizes);
             show_result($avatar_thumb_files);
         } catch (Exception $e) {
-            $this->assertEqual("縮圖時原始圖檔不存在", $e->getMessage());
+            $error = $e->getMessage();
         }
+        $this->assertEqual($error, lang_get('upload_origin_file_not_exist'));
     }
 
     /**

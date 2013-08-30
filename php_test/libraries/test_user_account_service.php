@@ -58,11 +58,13 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
      *
      */
     public function test_get_group_types_and_user_id_not_exist() {
+        $error = "";
         try {
             $group_types = $this->user_account_service->get_group_types(88);
         } catch (Exception $e) {
-            $this->assertEqual(lang_get('user_not_exist'), $e->getMessage());            
+            $error = $e->getMessage();
         }
+        $this->assertEqual($error, lang_get('user_not_exist'));            
     }
 
      /**
@@ -86,12 +88,14 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
      *
      */
     function test_login_and_user_not_exist() {
+        $error = "";
         try {
             $user = $this->user_model->get_by_id(88);
             $user_id = $this->user_account_service->login($user);
         } catch (Exception $e) {
-            $this->assertEqual($e->getMessage(), lang_get('user_not_exist'));
+            $error = $e->getMessage();
         }
+        $this->assertEqual($error, lang_get('user_not_exist'));
     }
 
      /**
@@ -214,12 +218,14 @@ class test_user_account_service extends CodeIgniterUnitTestCase {
      *
      */
     public function test_get_decode_remeber_me_value_and_not_vaild_value() {
+       $error = "";
        try {
             $remember_me_value = '1123456';
             $decode_remember_me_value = $this->user_account_service->get_decode_remeber_me_value($remember_me_value);
        } catch (Exception $e) {
-            $this->assertEqual($e->getMessage(), lang_get('user_remember_cookie_not_vaild'));
+            $error = $e->getMessage();
        }
+       $this->assertEqual($error, lang_get('user_remember_cookie_not_vaild'));
     }
 
      /**

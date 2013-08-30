@@ -6,3 +6,5 @@ http://stackoverflow.com/questions/2459728/how-to-test-facebook-connect-locally
 2. 關閉沙盒
 
 // signed_request 好像是在 facbook 裡面的 app 會收到的變數
+
+// dialog / login 的 state 是用來傳給 facebook 後， facebook 會傳回來相同的值讓我們驗證，避免 Cross-site request forgery (跨站請求偽造的意思)

@@ -3,6 +3,7 @@
  * Please note this file shouldn't be exposed on a live server,
  * there is no filtering of $_POST!!!!
  * 目前先把 session_destory 取消，原本看網路上是說 session 沒 destory，assert 會被 cache 但我測試並沒有耶
+ * 原本想要把 $_POST 都改成 $_REQUEST，但在測試 form_vaildation 時就會失敗，因為 form_vaildation 都是用 post
  */
 error_reporting(-1);
 

@@ -238,6 +238,10 @@ class Test_Controller extends CI_Controller {
 
 		// library
 		$this->load->library(array('unit_test'));
+
+		// init
+		$template = $this->template->layout_block('unit_test');
+		$this->unit->set_template($template); 
 	}
 
 	/**
@@ -253,13 +257,98 @@ class Test_Controller extends CI_Controller {
 
 	/**
 	 *
-	 * 驗證結果
+	 * 預測是 true
 	 *
 	 * @param type param
 	 *
 	 */
-	public function _run($test, $expected = TRUE, $test_name = 'undefined', $notes = '') {
-		$this->unit->run($test, $expected, $test_name, $notes);
+	public function _assert_true($value, $test_name = 'undefined', $notes = '') {
+		if($value == true) {
+			$test = true;
+			$expected = true;
+		} else {
+			$test = true;
+			$expected = false;
+		}
+		return $this->unit->run($test, $expected, $test_name, $notes);
+	}
+
+	/**
+	 *
+	 * 預測是失敗
+	 *
+	 * @param type param
+	 *
+	 */
+	public function _assert_false($value, $test_name = 'undefined', $notes = '') {
+		if($value == false) {
+			$test = true;
+			$expected = true;
+		} else {
+			$test = true;
+			$expected = false;
+		}
+		return $this->unit->run($test, $expected, $test_name, $notes);
+	}
+
+	/**
+	 *
+	 * 預測是相同
+	 *
+	 * @param type param
+	 *
+	 */
+	public function _assert_equal($value, $expected, $test_name = 'undefined', $notes = '') {
+		return $this->unit->run($value, $expected, $test_name, $notes);
+	}
+
+	/**
+	 *
+	 * 顯示全部的 test
+	 *
+	 * @param type param
+	 *
+	 */
+	public function index() {
+		$test_methods = $this->_get_test_methods();
+		foreach($test_methods as $index => $test_method) {
+			$this->$test_method();
+		}
+		$this->_show_result();
+		$this->_display();
+	}
+
+	/**
+	 *
+	 * 顯示測試結果
+	 *
+	 * @param type param
+	 *
+	 */
+	public function _show_result() {
+		$pass_count = $this->unit->count_results();
+		$pass_count = $this->unit->get_pass_count();
+		$fail_count = $this->unit->get_fail_count();
+		$result_str = "<span style='color:green'>{$pass_count} passes</span>";
+		$result_str .= "  ";
+		$result_str .= "<span style='color:red'>{$fail_count} fails</span>";
+		echo $result_str;
+	}
+
+	/**
+	 * 取得所有 test method
+	 *
+	 * @return array
+	 */
+	private function _get_test_methods() {
+		$test_methods = array();
+		$methods = get_class_methods($this);
+		foreach ($methods as $method) {
+			if (substr(strtolower($method), 0, 5) == 'test_') {
+				$test_methods[] = $method;
+			}
+		}
+		return $test_methods;
 	}
 }
 
