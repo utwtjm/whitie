@@ -262,15 +262,8 @@ class Test_Controller extends CI_Controller {
 	 * @param type param
 	 *
 	 */
-	public function _assert_true($value, $test_name = 'undefined', $notes = '') {
-		if($value == true) {
-			$test = true;
-			$expected = true;
-		} else {
-			$test = true;
-			$expected = false;
-		}
-		return $this->unit->run($test, $expected, $test_name, $notes);
+	public function _assert_true($value, $notes = '') {
+		return $this->_run($value, true, $notes);
 	}
 
 	/**
@@ -280,15 +273,8 @@ class Test_Controller extends CI_Controller {
 	 * @param type param
 	 *
 	 */
-	public function _assert_false($value, $test_name = 'undefined', $notes = '') {
-		if($value == false) {
-			$test = true;
-			$expected = true;
-		} else {
-			$test = true;
-			$expected = false;
-		}
-		return $this->unit->run($test, $expected, $test_name, $notes);
+	public function _assert_false($value, $notes = '') {
+		return $this->_run($value, false, $notes);
 	}
 
 	/**
@@ -298,7 +284,20 @@ class Test_Controller extends CI_Controller {
 	 * @param type param
 	 *
 	 */
-	public function _assert_equal($value, $expected, $test_name = 'undefined', $notes = '') {
+	public function _assert_equal($value, $expected, $notes = '') {
+		return $this->_run($value, $expected, $notes);
+	}
+
+	/**
+	 *
+	 * 測試
+	 *
+	 * @param type param
+	 *
+	 */
+	public function _run($value, $expected, $notes = '') {
+		$backtrace = debug_backtrace();
+		$test_name = $backtrace[2]['function'];
 		return $this->unit->run($value, $expected, $test_name, $notes);
 	}
 
